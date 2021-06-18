@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import HamburgerIcon from 'images/icons/hamburger-icon.svg';
 import { DeviceContext } from 'providers/Device';
-import { MainButton } from 'components/Buttons';
+import { MainButton } from 'sharedComponents/Buttons';
 
 
 const Container = styled.div`

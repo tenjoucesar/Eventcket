@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledSecondaryText = styled.h2`
+const StyledH2 = styled.h2`
   font-family: Gabriela Alt;
   font-weight: bold;
   font-size: 40px;
@@ -10,10 +10,10 @@ const StyledSecondaryText = styled.h2`
   color: ${props => props.theme.primaryDark};
 `;
 
-const SecondaryText = ({children, className}) => (
-  <StyledSecondaryText className={className}>
+const H2 = ({children, className}) => (
+  <StyledH2 className={className}>
     {children}
-  </StyledSecondaryText>
+  </StyledH2>
 );
 
-export default SecondaryText;
+export default H2;

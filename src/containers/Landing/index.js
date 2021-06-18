@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import DjBG from 'images/dj-hand.jpeg';
-import { MainButton } from 'components/Buttons';
+import { MainButton } from 'sharedComponents/Buttons';
 import CreateContent from 'components/CreateContent';
+import Benefits from 'components/Benefits';
 
 const TextContainer = styled.div`
   padding: 0 6px;
@@ -43,6 +44,7 @@ const Landing = () => {
         </TextContainer>
       </Main>
       <CreateContent />
+      <Benefits />
     </>
    );
 }

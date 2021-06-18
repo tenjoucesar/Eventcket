@@ -5,6 +5,7 @@ const evencketTheme = {
   black: '#000000',
   primaryDark: '#020E35',
   lightGray: '#F0F3FA',
+  darkGray: '#2B2B2B',
 
   // Devices
   minTablet: '(min-width: 768px)',
