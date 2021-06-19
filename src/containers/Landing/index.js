@@ -34,6 +34,14 @@ const LearnMoreButton = styled(MainButton)`
   padding: 12px 30px;
 `;
 
+const Form = styled.form`
+  border-radius: 23.11px;
+  padding: 20px 30px;
+  margin-top: 46px;
+  background: #a1a1a1;
+  height: 349px;
+`;
+
 const Landing = () => {
   return (
     <>
@@ -46,7 +54,7 @@ const Landing = () => {
       <CreateContent />
       <Benefits />
     </>
-   );
-}
+  );
+};
 
 export default Landing;

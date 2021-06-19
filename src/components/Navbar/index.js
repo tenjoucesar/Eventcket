@@ -6,7 +6,6 @@ import HamburgerIcon from 'images/icons/hamburger-icon.svg';
 import { DeviceContext } from 'providers/Device';
 import { MainButton } from 'sharedComponents/Buttons';
 
-
 const Container = styled.div`
   height: 80px;
   background-color: ${props => props.theme.white};
@@ -38,6 +37,7 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 `;
 
 const Title = styled.h1`
@@ -79,16 +79,14 @@ const ButtonLink = styled(MainButton)`
   }
 `;
 
-
 const Navbar = () => {
-  const { device } = useContext(DeviceContext)
+  const { device } = useContext(DeviceContext);
   return (
     <Container>
       <TitleContainer>
         <Title>Evencket</Title>
       </TitleContainer>
-      {device === 'largeDesktop'
-        ?
+      {device === 'largeDesktop' ? (
         <LinksContainer>
           <StyledLink to={{ pathname: '/' }}>Home</StyledLink>
           <StyledLink to={{ pathname: '/login' }}>About</StyledLink>
@@ -98,11 +96,11 @@ const Navbar = () => {
             <StyledLink to={{ pathname: '/create-event' }}>CREATE EVENT</StyledLink>
           </ButtonLink>
         </LinksContainer>
-        :
-          <StyledImg src={HamburgerIcon} />
-      }
+      ) : (
+        <StyledImg src={HamburgerIcon} />
+      )}
     </Container>
-   );
-}
+  );
+};
 
 export default Navbar;
