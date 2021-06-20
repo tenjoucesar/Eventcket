@@ -10,6 +10,7 @@ const StyledMainButton = styled.button`
   padding: 0 12px;
   color: ${props => props.theme.white};
   font-family: Avenir Next;
+  text-transform: uppercase;
 `;
 
 export const MainButton = ({ children, className }) => (
