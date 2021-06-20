@@ -1,10 +1,10 @@
 import { memo } from 'react';
-import { AdjustParagrath, MainTitle, MainContent, Main, Oval } from './styles';
+import { AdjustParagrath, Main, MainContent, MainTitle, OvalImg } from './styles';
 import RedLine from 'sharedComponents/RedLine';
 
 const CreateEvent = () => (
   <Main>
-    <Oval />
+    <OvalImg />
     <MainContent>
       <MainTitle>Create Amazing Events all in One Place</MainTitle>
       <RedLine />

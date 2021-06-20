@@ -1,32 +1,34 @@
 import styled from 'styled-components';
-import { default as Image } from '../../sharedComponents/Oval';
-import H2 from '../../sharedComponents/H2';
-import Paragraph from '../../sharedComponents/Paragraph';
+import Oval from '../Oval';
+import H2 from '../H2';
+import Paragraph from '../Paragraph';
 
 export const Main = styled.div`
   position: relative;
-  padding-top: 15px;
-  padding-bottom: 86px;
+  padding-top: 120px;
+  padding-bottom: 100px;
   width: 100%;
   @media ${({ theme }) => theme.minDesktop} {
-    margin-top: 70px;
-    margin-bottom: 85px;
+    padding-top: 80px;
+    padding-bottom: 180px;
+  }
+  @media ${({ theme }) => theme.minLargeDesktop} {
+    margin-top: 79px;
+    margin-bottom: 100px;
   }
 `;
 
-export const Oval = styled(Image)`
+export const OvalImg = styled(Oval)`
   left: -127px;
   position: absolute;
   top: 40px;
   z-index: -1;
-`;
-
-export const MainTitle = styled(H2)`
-  margin-top: 80px;
   @media ${({ theme }) => theme.minDesktop} {
-    margin-top: -25px;
+    top: 160px;
   }
 `;
+
+export const MainTitle = styled(H2)``;
 
 export const AdjustParagrath = styled(Paragraph)`
   width: 90%;
@@ -35,7 +37,10 @@ export const AdjustParagrath = styled(Paragraph)`
 
 export const MainContent = styled.div`
   @media ${({ theme }) => theme.minDesktop} {
-    width: 90%;
+    width: 93%;
     margin: auto;
+  }
+  @media ${({ theme }) => theme.minLargeDesktop} {
+    max-width: 800px;
   }
 `;

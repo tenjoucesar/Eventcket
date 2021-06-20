@@ -20,15 +20,15 @@ const basicImgBackground = css`
 
 export const MainContent = styled.div`
   background-image: none;
+  overflow: hidden;
   ${basicImgBackground}
   @media ${({ theme }) => theme.minDesktop} {
     height: 756px;
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: 50%;
   }
   @media ${({ theme }) => theme.minLargeDesktop} {
-    height: 873px;
+    height: 840px;
   }
 `;
 
@@ -37,7 +37,7 @@ export const ImageContainer = styled.div`
   ${basicImgBackground};
   flex: 1;
   @media ${({ theme }) => theme.minDesktop} {
-    z-index: -1;
+    display: none;
   }
 `;
 
@@ -49,17 +49,16 @@ export const FormContainer = styled.form`
   height: 580px;
   padding: 20px;
   justify-content: center;
-  background: rgb(138, 183, 201);
-  background: linear-gradient(90deg, rgba(138, 183, 201, 1) 55%, rgba(100, 174, 202, 1) 58%, rgba(208, 199, 199, 1) 100%);
-  flex: 1;
+
+  background: linear-gradient(to bottom, rgba(211, 209, 210, 0.8), rgba(237, 217, 213, 0.6));
   @media ${({ theme }) => theme.minDesktop} {
     height: auto;
     padding: 28px;
     padding-bottom: 50px;
-    background: transparent;
   }
   @media ${({ theme }) => theme.minLargeDesktop} {
-    padding: 28px 117px;
+    padding: 40px 117px;
+    padding-bottom: 40px;
   }
 `;
 
@@ -131,7 +130,6 @@ export const Span = styled.span`
     margin-left: 5px;
     color: #e73587;
   }
-
   @media ${({ theme }) => theme.minDesktop} {
     font-size: 14px;
     letter-spacing: -0.05px;
