@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Oval from '../Oval';
-import H2 from '../H2';
+
 import Paragraph from '../Paragraph';
 
 export const Main = styled.div`
@@ -27,8 +27,6 @@ export const OvalImg = styled(Oval)`
     top: 160px;
   }
 `;
-
-export const MainTitle = styled(H2)``;
 
 export const AdjustParagrath = styled(Paragraph)`
   width: 90%;

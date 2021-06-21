@@ -11,6 +11,7 @@ const evencketTheme = {
   minTablet: '(min-width: 768px)',
   tablet: '(min-width: 768px) and (max-width: 991px)',
   minDesktop: '(min-width: 992px)',
+  minLDesktop: '(min-width: 1200px)',
   minLargeDesktop: '(min-width: 1440px)',
 }
 

@@ -6,6 +6,7 @@ import Landing from 'containers/Landing';
 import Login from 'containers/Login';
 import EventPage from 'containers/EventPage';
 import CreateEvent from 'containers/CreateEvent';
+import Footer from 'components/Footer';
 import Navbar from 'components/Navbar';
 import { DeviceProvider } from 'providers/Device';
 
@@ -21,6 +22,7 @@ function App() {
             <Route path='/login' component={Login} />
             <Route path='/' component={Landing} />
           </Switch>
+          <Footer />
         </Router>
       </ThemeProvider>
     </DeviceProvider>

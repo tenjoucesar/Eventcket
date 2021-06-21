@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'Avenir Next Bold';
+  src: local('Avenir Next Bold'), url(./fonts/AvenirNextLTPro-Bold.otf) format('truetype');
+}
+
+@font-face {
   font-family: 'Gabriela Alt';
   src: local('Gabriela Alt'), url(./fonts/Gabriela-Regular.ttf) format('truetype');
 }
