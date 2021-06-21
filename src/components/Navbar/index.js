@@ -23,7 +23,7 @@ const Navbar = () => {
         <LinksContainer>
           <StyledLink to={{ pathname: '/' }}>Home</StyledLink>
           <StyledLink to={{ pathname: '/login' }}>About</StyledLink>
-          <StyledLink to={{ pathname: '/login' }}>Services</StyledLink>
+          <StyledLink to={{ pathname: '/events/1' }}>Services</StyledLink>
           <StyledLink to={{ pathname: '/login' }}>Portfolio</StyledLink>
           <ButtonLink>
             <StyledLink to={{ pathname: '/create-event' }}>CREATE EVENT</StyledLink>

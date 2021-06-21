@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { MainButton } from 'sharedComponents/Buttons';
 import Smarthphone from '../../images/smartphone.webp';
 import Smarthphone2x from '../../images/smartphone@2x.webp';
-import Smarthphone3x from '../../images/smartphone@3x.webp';
+import Smarthphone3x from '../../images/smartphone@3x.png';
 
 const basicImgBackground = css`
   background-position: center;
@@ -50,7 +50,9 @@ export const FormContainer = styled.form`
   padding: 20px;
   justify-content: center;
 
-  background: linear-gradient(to bottom, rgba(211, 209, 210, 0.8), rgba(237, 217, 213, 0.6));
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+
   @media ${({ theme }) => theme.minDesktop} {
     height: auto;
     padding: 28px;

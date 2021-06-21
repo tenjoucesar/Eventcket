@@ -54,8 +54,6 @@ const BG = styled.div`
   }
 `;
 
-
-
 const EventContent = () => {
   const EVENT_CREATED = 'EVENT_CREATED';
   const EVENT_PAGE = 'EVENT_PAGE';
