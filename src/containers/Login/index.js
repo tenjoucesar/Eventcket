@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { ConditionsContainer, FormButton, FormContainer, FormTitle, FormSubtitle, ImageContainer, InputCheckBox, MainContent, Span } from './styles';
-import CreateEvent from '../../sharedComponents/CreateEvent';
+import CreateEvent from 'sharedComponents/CreateEvent';
 import Footer from 'components/Footer';
-import Input from '../../sharedComponents/Input';
+import Input from 'sharedComponents/Input';
 
 const Login = () => (
   <>
