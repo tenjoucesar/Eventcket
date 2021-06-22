@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import EventInfo from './EventInfo';
+import EventInfo from 'components/EventInfo';
 import { MainButton } from 'sharedComponents/Buttons';
 
 const ButtonsContainer = styled.div`
@@ -22,9 +22,6 @@ const SuccessMessage = styled.p`
   @media ${({ theme }) => theme.minTablet} {
     line-height: 49px;
     margin-bottom: 50px;
-  }
-
-  @media ${({ theme }) => theme.minLargeDesktop} {
   }
 `;
 
@@ -56,16 +53,16 @@ const AdjustedMainButton = styled(MainButton)`
 
 const SuccessCreatedEvent = () => (
   <>
-  <SuccessMessage>
-    √  Congratulation!! Your event is created successfully you
-    can now manage your event or share the event page directly to your attendances
-  </SuccessMessage>
-  <EventInfo />
-  <ButtonsContainer>
-    <AdjustedMainButton>Manage Event</AdjustedMainButton>
-    <AdjustedMainButton>Event Page</AdjustedMainButton>
-  </ButtonsContainer>
-</>
+    <SuccessMessage>
+      √  Congratulation!! Your event is created successfully you
+      can now manage your event or share the event page directly to your attendances
+    </SuccessMessage>
+    <EventInfo />
+    <ButtonsContainer>
+      <AdjustedMainButton>Manage Event</AdjustedMainButton>
+      <AdjustedMainButton>Event Page</AdjustedMainButton>
+    </ButtonsContainer>
+  </>
 );
 
 export default SuccessCreatedEvent;

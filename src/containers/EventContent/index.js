@@ -46,11 +46,15 @@ const BG = styled.div`
   @media ${({ theme }) => theme.minTablet} {
     background: url(${DutchCakeTablet});
     height: 558px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   @media ${({ theme }) => theme.minLargeDesktop} {
     background: url(${DutchCakeDesktop});
     height: 899px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;
 

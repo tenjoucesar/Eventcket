@@ -13,6 +13,7 @@ const evencketTheme = {
   minDesktop: '(min-width: 992px)',
   minLDesktop: '(min-width: 1200px)',
   minLargeDesktop: '(min-width: 1440px)',
+  maxLargeDesktop: '(max-width: 1439px)',
 }
 
 export default evencketTheme;
