@@ -9,31 +9,37 @@ import {
   Title,
   LinksContainer,
   StyledLink,
-  ButtonLink
 } from './styles';
 
-const Navbar = () => {
+const Navbar = ({setMenuOpen, isMenuOpen}) => {
   const { device } = useContext(DeviceContext);
+  const isLargeDesktop = device === 'largeDesktop';
+
+  const Content = !isLargeDesktop && !isMenuOpen ?
+    <StyledImg src={HamburgerIcon} onClick={() => setMenuOpen(true)}/>
+  :
+  <LinksContainer isOpen={isMenuOpen}>
+    {Links.map(({ pathname, id, text }) => (
+      <StyledLink to={{pathname: pathname}} key={id}>{text}</StyledLink>
+    ))}
+  </LinksContainer>;
+
   return (
     <Container>
       <TitleContainer>
         <Title>Evencket</Title>
       </TitleContainer>
-      {device === 'largeDesktop' ? (
-        <LinksContainer>
-          <StyledLink to={{ pathname: '/' }}>Home</StyledLink>
-          <StyledLink to={{ pathname: '/login' }}>About</StyledLink>
-          <StyledLink to={{ pathname: '/login' }}>Services</StyledLink>
-          <StyledLink to={{ pathname: '/login' }}>Portfolio</StyledLink>
-          <ButtonLink>
-            <StyledLink to={{ pathname: '/create-event' }}>CREATE EVENT</StyledLink>
-          </ButtonLink>
-        </LinksContainer>
-      ) : (
-        <StyledImg src={HamburgerIcon} />
-      )}
+      {Content}
     </Container>
   );
 };
+
+const Links = [
+  { pathname: '/', id: 0, text: 'Home' },
+  { pathname: '/', id: 1, text: 'About' },
+  { pathname: '/', id: 2, text: 'Services' },
+  { pathname: '/events/1', id: 3, text: 'Portfolio' },
+  { pathname: '/login', id: 4, text: 'LOG IN' },
+];
 
 export default Navbar;

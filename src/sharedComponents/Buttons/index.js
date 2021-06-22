@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const StyledMainButton = styled.button`
+export const MainButtonStyles = css`
   background-color: ${props => props.theme.primaryColor};
   border: none;
   border-radius: 32px;
@@ -11,6 +11,10 @@ const StyledMainButton = styled.button`
   color: ${props => props.theme.white};
   font-family: Avenir Next;
   text-transform: uppercase;
+`;
+
+const StyledMainButton = styled.button`
+  ${MainButtonStyles}
 `;
 
 export const MainButton = ({ children, className }) => (
