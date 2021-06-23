@@ -2,7 +2,7 @@ import React from 'react';
 import CreateContent from 'components/CreateContent';
 import Benefits from 'components/Benefits';
 import ContactSection from 'components/ContactSection';
-import Input from 'sharedComponents/Input';
+import AppInput from 'components/AppInput';
 import {
   TextContainer,
   Title,
@@ -23,7 +23,7 @@ const Landing = () => (
       <Form>
         <QuestionsContainer>
           {options.map(({placeholder, id, text}) => (
-            <Input placeholder={placeholder} label={text} key={id}/>
+            <AppInput placeholder={placeholder} label={text} key={id}/>
           ))}
         </QuestionsContainer>
         <FormButton>CREATE EVENT</FormButton>

@@ -11,7 +11,7 @@ import {
   Span
 } from './styles';
 import CreateEvent from 'sharedComponents/CreateEvent';
-import Input from 'sharedComponents/Input';
+import AppInput from 'components/AppInput';
 
 const Login = () => (
   <>
@@ -21,7 +21,7 @@ const Login = () => (
         <FormTitle>Create new account</FormTitle>
         <FormSubtitle>Use your work email to create new account...</FormSubtitle>
         {options.map(({ placeholder, id }) => (
-          <Input placeholder={placeholder} key={id} />
+          <AppInput placeholder={placeholder} key={id} />
         ))}
         <ConditionsContainer>
           <InputCheckBox type='checkbox' />
