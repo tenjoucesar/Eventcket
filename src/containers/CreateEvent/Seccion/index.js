@@ -1,8 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { Icon, InputContainer, Seccion, SeccionContent, SeccionTitle, UpdateArea, UpdateHeader, UpdateTitle, UpdateSeccion } from './styles';
-import AppCheckbox from 'components/AppCheckbox';
-import AppInput from 'components/AppInput';
-import AppSelect from 'components/AppSelect';
+import FormElement from 'components/FormElement';
 import Arrow from 'images/icons/arrow.png';
 import Cancel from 'images/icons/cancel.png';
 import ExpandLess from 'images/icons/expand-less.png';
@@ -19,10 +17,9 @@ const RowSeccion = ({ options = [], title, update, className }) => {
       </SeccionTitle>
       <SeccionContent className={show ? '' : 'hidden'}>
         <InputContainer className={className}>
-          {options.map(({ id, type, ...rest }, index) => {
-            const props = { ...rest, className: `div-${index}` };
-            return !type ? <AppInput {...props} key={id} /> : type === 'checkbox' ? <AppCheckbox {...props} key={id} /> : <AppSelect {...props} key={id} />;
-          })}
+          {options.map(({ id, ...rest }, index) => (
+            <FormElement {...rest} key={id} className={`div-${index + 1}`} />
+          ))}
         </InputContainer>
         {update && (
           <>

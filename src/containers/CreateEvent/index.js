@@ -1,16 +1,18 @@
 import { memo } from 'react';
 import { Button, Container } from './styles';
-import Checkbox from 'components/AppCheckbox';
-import options from './options';
+import eventDetails from './eventDetails';
+import FormElement from 'components/FormElement';
+import organizerDetails from './organizerDetails';
 import RowSeccion from './Seccion';
+import ticketsDetails from './ticketsDetails';
 
 const CreateEvent = () => (
   <Container>
-    {options.map(option => (
-      <RowSeccion {...option} key={option.id} />
-    ))}
+    <RowSeccion {...eventDetails} />
+    <RowSeccion {...organizerDetails} />
+    <RowSeccion {...ticketsDetails} />
     <Button>SAVE EVENT</Button>
-    <Checkbox label='I have read the Terms and Conditions' row />
+    <FormElement type='checkbox' label='I have read the Terms and Conditions' className='row' />
   </Container>
 );
 

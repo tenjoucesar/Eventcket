@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TextArea = styled.textarea`
+export default styled.textarea`
   padding: 12px 15px;
   height: 225px;
   border: 1px solid #bea4a4;

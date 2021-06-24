@@ -1,19 +1,38 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import pageStyles from 'themes/pageStyles';
+
+const createEventStyles = css`
+  color: #666666;
+  ::placeholder {
+    color: #666666;
+  }
+  border: 1px solid #bea4a4;
+  height: 47px;
+  padding-left: 15px;
+  font-size: 14px;
+  @media ${({ theme }) => theme.minDesktop} {
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+`;
+
+const loginStyles = css`
+  color: ${({ theme }) => theme.white};
+  ::placeholder {
+    color: ${({ theme }) => theme.white};
+  }
+`;
 
 export default styled.input`
   border-color: ${({ theme }) => theme.white};
   border: 0.5px solid ${({ theme }) => theme.white};
   border-radius: 5px;
-  background: #a1a1a1;
   padding-left: 10px;
-  color: ${({ theme }) => theme.white};
   height: 33px;
   background: transparent;
   font-family: Roboto;
   font-size: 14px;
-  ::placeholder {
-    color: ${({ theme }) => theme.white};
-  }
   @media ${({ theme }) => theme.minDesktop} {
     height: 50px;
     font-size: 16px;
@@ -21,4 +40,5 @@ export default styled.input`
     letter-spacing: 0.15px;
     padding-left: 16px;
   }
+  ${({ pathname }) => pageStyles(loginStyles, createEventStyles)[pathname]}
 `;
