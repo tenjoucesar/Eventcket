@@ -1,17 +1,6 @@
-import { memo } from 'react';
-import {
-  ConditionsContainer,
-  FormButton,
-  FormContainer,
-  FormTitle,
-  FormSubtitle,
-  ImageContainer,
-  InputCheckBox,
-  MainContent,
-  Span
-} from './styles';
+import { ConditionsContainer, FormButton, FormContainer, FormTitle, FormSubtitle, ImageContainer, MainContent, Span } from './styles';
 import CreateEvent from 'sharedComponents/CreateEvent';
-import Input from 'sharedComponents/Input';
+import FormElement from 'components/FormElement';
 
 const Login = () => (
   <>
@@ -21,11 +10,10 @@ const Login = () => (
         <FormTitle>Create new account</FormTitle>
         <FormSubtitle>Use your work email to create new account...</FormSubtitle>
         {options.map(({ placeholder, id }) => (
-          <Input placeholder={placeholder} key={id} />
+          <FormElement placeholder={placeholder} key={id} />
         ))}
         <ConditionsContainer>
-          <InputCheckBox type='checkbox' />
-          <Span>I have read the Teams and Conditions</Span>
+          <FormElement className='row' type='checkbox' label='I have read the Terms and Conditions' />
         </ConditionsContainer>
         <FormButton>Sign up now</FormButton>
         <Span>
@@ -45,4 +33,4 @@ const options = [
   { placeholder: 'Discord ID', id: 5 },
 ];
 
-export default memo(Login);
+export default Login;

@@ -1,11 +1,44 @@
-import { memo } from 'react';
-import { FormGroup, Input, Label } from './styles';
+import styled, { css } from 'styled-components';
+import pageStyles from 'themes/pageStyles';
 
-const AppInput = ({ label, ...rest }) => (
-  <FormGroup>
-    {label && <Label>{label}</Label>}
-    <Input {...rest} />
-  </FormGroup>
-);
+const createEventStyles = css`
+  color: #666666;
+  ::placeholder {
+    color: #666666;
+  }
+  border: 1px solid #bea4a4;
+  height: 47px;
+  padding-left: 15px;
+  font-size: 14px;
+  @media ${({ theme }) => theme.minDesktop} {
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+`;
 
-export default memo(AppInput);
+const loginStyles = css`
+  color: ${({ theme }) => theme.white};
+  ::placeholder {
+    color: ${({ theme }) => theme.white};
+  }
+`;
+
+export default styled.input`
+  border-color: ${({ theme }) => theme.white};
+  border: 0.5px solid ${({ theme }) => theme.white};
+  border-radius: 5px;
+  padding-left: 10px;
+  height: 33px;
+  background: transparent;
+  font-family: Roboto;
+  font-size: 14px;
+  @media ${({ theme }) => theme.minDesktop} {
+    height: 50px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    padding-left: 16px;
+  }
+  ${({ pathname }) => pageStyles(loginStyles, createEventStyles)[pathname]}
+`;

@@ -11,6 +11,7 @@ export const MainButtonStyles = css`
   color: ${props => props.theme.white};
   font-family: Avenir Next;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const StyledMainButton = styled.button`

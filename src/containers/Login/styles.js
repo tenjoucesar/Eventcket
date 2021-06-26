@@ -102,14 +102,6 @@ export const ConditionsContainer = styled.div`
   }
 `;
 
-export const InputCheckBox = styled.input`
-  margin: 0;
-  height: 13px;
-  @media ${({ theme }) => theme.minDesktop} {
-    height: 18px;
-  }
-`;
-
 export const FormButton = styled(MainButton)`
   width: 325px;
   height: 29.26px;
