@@ -16,7 +16,10 @@ const RowSeccion = ({ id, options = [], title, update, className, hide }) => {
   return (
     <Seccion>
       <SeccionTitle>
-        {title} <Icon className='arrow' src={show ? ExpandLess : ExpandMore} alt='tickets' onClick={toggleShow} />
+        {title} <Icon 
+                  className='arrow' 
+                  src={show ? ExpandLess : ExpandMore} 
+                  alt='tickets' onClick={toggleShow} />
       </SeccionTitle>
       <SeccionContent className={show ? '' : 'hidden'}>
         <InputContainer className={className}>
@@ -40,7 +43,7 @@ const RowSeccion = ({ id, options = [], title, update, className, hide }) => {
           </>
         )}
       </SeccionContent>
-      {/* solo si no es el ultimo */}
+      {/* only if it is not the last */}
       {id !== 3 && device === 'largeDesktop' && <Button>SAVE & NEXT</Button>}
     </Seccion>
   );
