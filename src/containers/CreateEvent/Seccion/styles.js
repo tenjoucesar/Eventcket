@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MainButton } from 'sharedComponents/Buttons';
 
 export const Seccion = styled.div`
   color: #000000;
@@ -8,14 +9,17 @@ export const Seccion = styled.div`
     margin-bottom: 54px;
   }
   @media ${({ theme }) => theme.minDesktop} {
-    margin-top: 60px;
+    margin-top: 61px;
+  }
+  @media ${({ theme }) => theme.minLargeDesktop} {
+    margin-top: 100px;
   }
 `;
 
 export const SeccionContent = styled.div`
   &.hidden {
     display: none;
-    @media ${({ theme }) => theme.minDesktop} {
+    @media ${({ theme }) => theme.minLargeDesktop} {
       display: block;
     }
   }
@@ -36,10 +40,13 @@ export const SeccionTitle = styled.h4`
     font-size: 24px;
     margin-bottom: 28px;
   }
+  @media ${({ theme }) => theme.minDesktop} {
+    margin-bottom: 31px;
+  }
 `;
 
 export const Icon = styled.img`
-  @media ${({ theme }) => theme.minDesktop} {
+  @media ${({ theme }) => theme.minLargeDesktop} {
     &.arrow {
       display: none;
     }
@@ -50,7 +57,9 @@ export const InputContainer = styled.div`
   display: grid;
   align-items: center;
   grid-gap: 0px 15px;
-
+  @media ${({ theme }) => theme.minDesktop} {
+    grid-gap: 0px 28px;
+  }
   &.event {
     grid-template-areas:
       'div-1 div-1'
@@ -73,6 +82,15 @@ export const InputContainer = styled.div`
       grid-template-rows: repeat(5, auto);
       grid-template-columns: repeat(4, 1fr);
     }
+    @media ${({ theme }) => theme.minLargeDesktop} {
+      grid-template-areas:
+        'div-1 div-1 div-1 div-1 div-1'
+        'div-2 div-3 div-4 div-5 .'
+        'div-6 div-6 div-6 div-8 div-9 '
+        'div-7 div-7 div-7 div-7 .'
+        'div-10 div-10 div-10 div-10 div-10';
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
   &.organizer {
     grid-template-areas:
@@ -85,6 +103,7 @@ export const InputContainer = styled.div`
     grid-template-rows: repeat(6, auto);
     grid-template-columns: 1fr;
     @media ${({ theme }) => theme.minDesktop} {
+      max-width: 852px;
       grid-template-areas:
         'div-1 div-2'
         'div-3 div-4'
@@ -103,6 +122,7 @@ export const InputContainer = styled.div`
     grid-template-rows: repeat(5, auto);
     grid-template-columns: 1fr;
     @media ${({ theme }) => theme.minDesktop} {
+      max-width: 852px;
       grid-template-areas:
         'div-1 div-2'
         'div-3 div-5'
@@ -118,6 +138,15 @@ export const UpdateHeader = styled.h4`
   font-family: Roboto;
   font-size: 15px;
   color: #666666;
+  @media ${({ theme }) => theme.minDesktop} {
+    margin-top: 21px;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  @media ${({ theme }) => theme.minLargeDesktop} {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
 `;
 
 export const UpdateSeccion = styled.div`
@@ -125,6 +154,9 @@ export const UpdateSeccion = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 19px;
+  @media ${({ theme }) => theme.minDesktop} {
+    grid-template-columns: repeat(2, 210px);
+  }
 `;
 
 export const UpdateArea = styled.div`
@@ -145,4 +177,19 @@ export const UpdateTitle = styled.span`
   font-size: 15px;
   line-height: 22.6px;
   margin-top: 20px;
+  @media ${({ theme }) => theme.minDesktop} {
+    font-size: 16px;
+  }
+`;
+
+export const Button = styled(MainButton)`
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 425px;
+  @media ${({ theme }) => theme.minDesktop} {
+    margin-top: 25px;
+  }
+  @media ${({ theme }) => theme.minLargeDesktop} {
+    margin-top: 15px;
+  }
 `;

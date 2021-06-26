@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const basicCheckboxStyle = css`
+  flex-direction: row;
+  align-items: center;
+  flex-direction: row-reverse;
+  label {
+    flex: 1;
+    margin-bottom: 0;
+    margin-left: 9px;
+  }
+`;
 
 export default styled.div`
   display: flex;
@@ -8,15 +19,18 @@ export default styled.div`
     margin-bottom: 18px;
   }
   &.row {
-    flex-direction: row;
-    align-items: center;
-    flex-direction: row-reverse;
-    label {
-      flex: 1;
-      margin-bottom: 0;
-      margin-left: 15px;
+    ${basicCheckboxStyle}
+  }
+
+  &.checkbox {
+    @media ${({ theme }) => theme.minDesktop} {
+      ${basicCheckboxStyle}
+    }
+    @media ${({ theme }) => theme.minLargeDesktop} {
+      margin-bottom: 22px;
     }
   }
+
   &.div-1 {
     grid-area: div-1;
   }

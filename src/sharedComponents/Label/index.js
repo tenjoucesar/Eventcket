@@ -10,6 +10,10 @@ const createEventStyles = css`
   @media ${({ theme }) => theme.minDesktop} {
     font-size: 16px;
     margin-bottom: 6px;
+    margin-left: 9px;
+  }
+  @media ${({ theme }) => theme.minLargeDesktop} {
+    margin-left: 12px;
   }
 `;
 

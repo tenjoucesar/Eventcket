@@ -1,12 +1,16 @@
-import { memo } from 'react';
+import React from 'react';
 import { Select } from './styles';
 
-const AppSelect = ({ label, placeholder, ...rest }) => (
-  <Select {...rest}>
-    <option value='' disabled selected hidden>
+const AppSelect = React.forwardRef(({ label, placeholder, ...rest }, ref) => (
+  <Select ref={ref} {...rest}>
+    <option 
+      value='' 
+      disabled 
+      selected 
+      hidden>
       {placeholder}
     </option>
   </Select>
-);
+));
 
-export default memo(AppSelect);
+export default AppSelect;

@@ -1,14 +1,17 @@
-import { memo, useCallback, useState } from 'react';
-import { Icon, InputContainer, Seccion, SeccionContent, SeccionTitle, UpdateArea, UpdateHeader, UpdateTitle, UpdateSeccion } from './styles';
-import FormElement from 'components/FormElement';
+import { memo, useCallback, useContext, useState } from 'react';
+import { Button, Icon, InputContainer, Seccion, SeccionContent, SeccionTitle, UpdateArea, UpdateHeader, UpdateTitle, UpdateSeccion } from './styles';
+import { DeviceContext } from 'providers/Device';
 import Arrow from 'images/icons/arrow.png';
 import Cancel from 'images/icons/cancel.png';
 import ExpandLess from 'images/icons/expand-less.png';
 import ExpandMore from 'images/icons/expand-more.png';
+import FormElement from 'components/FormElement';
 
-const RowSeccion = ({ options = [], title, update, className }) => {
+const RowSeccion = ({ id, options = [], title, update, className, hide }) => {
+  const { device } = useContext(DeviceContext);
   const [show, setShow] = useState(true);
   const toggleShow = useCallback(() => setShow(!show), [show]);
+  if (hide) return null;
 
   return (
     <Seccion>
@@ -18,7 +21,7 @@ const RowSeccion = ({ options = [], title, update, className }) => {
       <SeccionContent className={show ? '' : 'hidden'}>
         <InputContainer className={className}>
           {options.map(({ id, ...rest }, index) => (
-            <FormElement {...rest} key={id} className={`div-${index + 1}`} />
+            <FormElement {...rest} key={id} className={`div-${index + 1} `} />
           ))}
         </InputContainer>
         {update && (
@@ -37,6 +40,8 @@ const RowSeccion = ({ options = [], title, update, className }) => {
           </>
         )}
       </SeccionContent>
+      {/* solo si no es el ultimo */}
+      {id !== 3 && device === 'largeDesktop' && <Button>SAVE & NEXT</Button>}
     </Seccion>
   );
 };

@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { ConditionsContainer, FormButton, FormContainer, FormTitle, FormSubtitle, ImageContainer, MainContent, Span } from './styles';
 import CreateEvent from 'sharedComponents/CreateEvent';
 import FormElement from 'components/FormElement';
@@ -34,4 +33,4 @@ const options = [
   { placeholder: 'Discord ID', id: 5 },
 ];
 
-export default memo(Login);
+export default Login;
