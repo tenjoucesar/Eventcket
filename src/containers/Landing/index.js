@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import CreateContent from 'components/CreateContent';
 import Benefits from 'components/Benefits';
 import ContactSection from 'components/ContactSection';
-import FormElement from 'components/FormElement';
 import {
   TextContainer,
   Title,
@@ -13,26 +12,8 @@ import {
   QuestionsContainer,
   FormButton
 } from './styles';
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import styled from 'styled-components';
-import { InputStyles } from 'sharedComponents/Input/styles';
-
-const DatePickerComponent = styled.div`
-  .react-datepicker__input-container input {
-    ${InputStyles}
-  }
-`;
-
-const DatePickerC = ({ text }) => {
-  const [startDate, setStartDate] = useState(new Date());
-  return (
-    <DatePickerComponent>
-
-      <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-    </DatePickerComponent>
-  );
-}
+import FormElement from 'components/FormElement';
 
 const Landing = () => (
   <>
@@ -43,11 +24,15 @@ const Landing = () => (
       </TextContainer>
       <Form>
         <QuestionsContainer>
-          {options.map(({placeholder, id, text}) => (
-            <FormElement placeholder={placeholder} label={text} key={id}/>
+          {options.map(({placeholder, id, text, type, delay}) => (
+            <FormElement
+              type={type}
+              placeholder={placeholder}
+              label={text}
+              key={id}
+              delay={delay}
+            />
           ))}
-          <DatePickerC />
-          <Input placeholder='Type Venue Location' label='Venue Location'/>
         </QuestionsContainer>
         <FormButton>CREATE EVENT</FormButton>
       </Form>
@@ -60,9 +45,9 @@ const Landing = () => (
 
 const options = [
   { text: 'Event Name', placeholder: 'Type Event Name', id: 1 },
-  // { text: 'Starts', placeholder: 'Mon 31 May 2021', id: 2 },
-  // { text: 'Ends', placeholder: 'Mon 31 May 2021', id: 3 },
-  // { text: 'Venue Location', placeholder: 'Type Venue Location', id: 4 },
+  { type: 'datePicker', text: 'Starts', className: 'row', id: 2 },
+  { type: 'datePicker', text: 'Ends', delay: true,  id: 3 },
+  { text: 'Venue Location', placeholder: 'Type Venue Location', id: 5 },
 ];
 
 export default Landing;

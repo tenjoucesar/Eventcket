@@ -6,23 +6,27 @@ import Input from 'sharedComponents/Input';
 import Label from 'sharedComponents/Label';
 import Select from 'sharedComponents/Select';
 import Textarea from 'sharedComponents/Textarea';
+import DatePicker from 'sharedComponents/DatePicker';
 
 const element = {
   select: Select,
   textarea: Textarea,
   checkbox: Checkbox,
+  datePicker: DatePicker,
 };
 
-const FormElement = React.forwardRef(({ label, className, location: { pathname }, type, ...rest }, ref) => {
+const FormElement = React.forwardRef((
+  { label, className, location: { pathname }, type, ...rest }, ref
+)=> {
   const Element = element[type] || Input;
   const isCheckbox = type === 'checkbox';
   return (
     <Form className={`${className} ${isCheckbox  && 'checkbox'}`}>
       {label && <Label pathname={pathname}>{label}</Label>}
-      <Element 
-        {...(isCheckbox && { type: 'checkbox' })} 
-        pathname={pathname} 
-        ref={ref} 
+      <Element
+        {...(isCheckbox && { type: 'checkbox' })}
+        pathname={pathname}
+        ref={ref}
         {...rest} />
     </Form>
   );

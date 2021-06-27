@@ -16,10 +16,12 @@ const RowSeccion = ({ id, options = [], title, update, className, hide }) => {
   return (
     <Seccion>
       <SeccionTitle>
-        {title} <Icon 
-                  className='arrow' 
-                  src={show ? ExpandLess : ExpandMore} 
-                  alt='tickets' onClick={toggleShow} />
+        {title}
+        <Icon
+          className='arrow'
+          src={show ? ExpandLess : ExpandMore}
+          alt='tickets' onClick={toggleShow}
+        />
       </SeccionTitle>
       <SeccionContent className={show ? '' : 'hidden'}>
         <InputContainer className={className}>
