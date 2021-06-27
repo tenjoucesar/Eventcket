@@ -24,6 +24,10 @@ const loginStyles = css`
   }
 `;
 
+const LandingStyles = css`
+  ${loginStyles}
+`;
+
 export default styled.input`
   border-color: ${({ theme }) => theme.white};
   border: 0.5px solid ${({ theme }) => theme.white};
@@ -40,5 +44,5 @@ export default styled.input`
     letter-spacing: 0.15px;
     padding-left: 16px;
   }
-  ${({ pathname }) => pageStyles(loginStyles, createEventStyles)[pathname]}
+  ${({ pathname }) => pageStyles(loginStyles, createEventStyles, LandingStyles)[pathname]}
 `;
