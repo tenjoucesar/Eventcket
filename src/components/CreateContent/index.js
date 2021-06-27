@@ -34,7 +34,7 @@ const CreateContent = () => (
     <CardsContainer>
       <Card>
         <Elipse>
-          <img src={PencilIcon} />
+          <img src={PencilIcon} alt='logo' />
         </Elipse>
         <AdjustedH4>
           CREATE YOUR EVENT
@@ -47,7 +47,7 @@ const CreateContent = () => (
       </Card>
       <Card>
         <Elipse>
-          <img src={MegaphoneIcon} />
+          <img src={MegaphoneIcon} alt='logo' />
         </Elipse>
         <AdjustedH4>
           PROMOTE EVENT
@@ -60,7 +60,7 @@ const CreateContent = () => (
       </Card>
       <Card>
         <Elipse>
-          <AdministrationImage src={AdministrationIcon} />
+          <AdministrationImage src={AdministrationIcon} alt='logo' />
         </Elipse>
         <AdjustedH4>
           MANAGE EVENT
