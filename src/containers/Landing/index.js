@@ -8,12 +8,9 @@ import {
   Title,
   Main,
   LearnMoreButton,
-  Form,
-  QuestionsContainer,
-  FormButton
 } from './styles';
-import "react-datepicker/dist/react-datepicker.css";
-import FormElement from 'components/FormElement';
+
+import CreateEventLandingForm from 'components/CreateEventLandingForm';
 
 const Landing = () => (
   <>
@@ -22,32 +19,12 @@ const Landing = () => (
         <Title>Create Event that ranks</Title>
         <LearnMoreButton>LEARN MORE</LearnMoreButton>
       </TextContainer>
-      <Form>
-        <QuestionsContainer>
-          {options.map(({placeholder, id, text, type, delay}) => (
-            <FormElement
-              type={type}
-              placeholder={placeholder}
-              label={text}
-              key={id}
-              delay={delay}
-            />
-          ))}
-        </QuestionsContainer>
-        <FormButton>CREATE EVENT</FormButton>
-      </Form>
+      <CreateEventLandingForm />
     </Main>
     <CreateContent />
     <Benefits />
     <ContactSection />
   </>
 );
-
-const options = [
-  { text: 'Event Name', placeholder: 'Type Event Name', id: 1 },
-  { type: 'datePicker', text: 'Starts', className: 'row', id: 2 },
-  { type: 'datePicker', text: 'Ends', delay: true,  id: 3 },
-  { text: 'Venue Location', placeholder: 'Type Venue Location', id: 5 },
-];
 
 export default Landing;

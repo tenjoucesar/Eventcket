@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import styled from 'styled-components';
+import "react-datepicker/dist/react-datepicker.css";
+
 import { InputStyles } from 'sharedComponents/Input/styles';
 
 const DatePickerContainer = styled.div`

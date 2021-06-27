@@ -1,12 +1,9 @@
 import React from 'react';
+import FormElement from 'components/FormElement';
 import {
   Container,
   AdjustedH3,
-  Text,
-  TextInput,
-  Input,
-  Textarea,
-  QuestionContainer,
+  SubTitle,
   AdjustedMainButton,
   TextContainer,
   FormContainer,
@@ -16,19 +13,17 @@ const ContactSection = () => (
   <Container>
     <TextContainer>
       <AdjustedH3>Questions, Comments, Concerns?</AdjustedH3>
-      <Text>We’d love to <span>hear</span> from you!</Text>
+      <SubTitle>We’d love to <span>hear</span> from you!</SubTitle>
     </TextContainer>
     <FormContainer>
-      {inputOptions.map(({text, placeholder, id}) => (
-        <QuestionContainer key={id}>
-          <TextInput>{text}</TextInput>
-          <Input placeholder={placeholder} />
-        </QuestionContainer>
+      {inputOptions.map(({type, text, placeholder, id}) => (
+        <FormElement
+          type={type}
+          placeholder={placeholder}
+          label={text}
+          key={id}
+        />
       ))}
-      <QuestionContainer>
-        <TextInput>Message</TextInput>
-        <Textarea rows='4' placeholder='Your message starts with…' />
-      </QuestionContainer>
       <AdjustedMainButton>
         Send a Message
       </AdjustedMainButton>
@@ -37,8 +32,9 @@ const ContactSection = () => (
 );
 
 const inputOptions = [
-  { text: 'Your Email Address', placeholder: 'something@website.com', id: 1, name: 'email'},
-  { text: 'Subject', placeholder: 'Question about your article', id: 2, name: 'subject' },
+  { type: 'input', text: 'Your Email Address', placeholder: 'something@website.com', id: 1},
+  { type: 'input', text: 'Subject', placeholder: 'Question about your article', id: 2},
+  { type: 'textarea', text: 'Message', placeholder: 'Your message starts with…', id: 3},
 ];
 
 export default ContactSection;

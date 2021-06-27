@@ -2,9 +2,53 @@ import styled, { css } from 'styled-components';
 import H3 from 'sharedComponents/H3';
 import { MainButton } from 'sharedComponents/Buttons';
 
+export const ContactSectionLabelStyles = css`
+  font-family: Avenir Next Bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2C3241;
+  margin-left: 0;
+`;
+
+export const InputStyles = css`
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-family: Avenir Next;
+  font-size: 14px;
+  line-height: 36px;
+  color: #2C3241;
+  height: 36px;
+
+  ::placeholder {
+    color: #2C3241;
+    opacity: 0.6;
+  }
+
+  @media ${({ theme }) => theme.minDesktop} {
+    font-size: 18px;
+  }
+`;
+
 export const Container = styled.section`
   padding: 54px 29px 189px;
 
+  label {
+    ${ContactSectionLabelStyles}
+  }
+
+  input {
+    ${InputStyles}
+    margin: 8px auto 21px 0;
+    width: -webkit-fill-available;
+  }
+
+  textarea {
+    ${InputStyles}
+    margin: 8px 0 32px 0;
+  }
 
   @media ${({ theme }) => theme.minTablet} {
     padding: 90px 20px 93px;
@@ -28,7 +72,7 @@ export const AdjustedH3 = styled(H3)`
   }
 `;
 
-export const Text = styled.h2`
+export const SubTitle = styled.h2`
   font-family: Gabriela Alt;
   font-weight: 600;
   font-size: 50px;
@@ -47,33 +91,12 @@ export const Text = styled.h2`
   }
 `;
 
-export const TextInput = styled.label`
-  font-family: Avenir Next Bold;
-  font-size: 16px;
-  line-height: 22px;
-  color: #2C3241;
-`;
-
-export const InputStyles = css`
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  padding: 5px 10px;
-  font-family: Avenir Next;
-  font-size: 14px;
-  line-height: 36px;
-`
-
 export const Input = styled.input`
   ${InputStyles}
-  margin: 8px auto 32px 0;
-  width: -webkit-fill-available;
 `;
 
 export const Textarea = styled.textarea`
-  ${InputStyles}
-  margin: 8px 0 32px 0;
+
 `;
 
 export const QuestionContainer = styled.div`
