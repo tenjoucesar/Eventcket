@@ -66,7 +66,7 @@ const CardPaymentForm = () => (
       <DropDownLabel>Card Number</DropDownLabel>
       <FlexContainer>
         <EventInput placeholder='1000 0000 0000 000' />
-        <img src={CardsIcon} />
+        <img src={CardsIcon} alt='credit cards icon'/>
       </FlexContainer>
     </ColContainer>
     <AdjustedRowContaer>
