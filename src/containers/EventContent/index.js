@@ -22,7 +22,7 @@ const EventContent = ({location}) => {
   return (
     <>
       <BG>
-        <img src={selectedImg} />
+        <img src={selectedImg} alt='Main Event' />
       </BG>
       <DesktopInfoContainer>
         <Container>

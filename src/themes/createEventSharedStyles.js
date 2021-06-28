@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { MainButton } from 'sharedComponents/Buttons';
 
-export const Seccion = styled.div`
+export const Section = styled.div`
   color: #000000;
   margin-top: 54px;
   min-height: auto;
@@ -16,7 +16,7 @@ export const Seccion = styled.div`
   }
 `;
 
-export const SeccionContent = styled.div`
+export const SectionContent = styled.div`
   &.hidden {
     display: none;
     @media ${({ theme }) => theme.minLargeDesktop} {
@@ -25,7 +25,7 @@ export const SeccionContent = styled.div`
   }
 `;
 
-export const SeccionTitle = styled.h4`
+export const SectionTitle = styled.h4`
   font-size: 22.56px;
   font-family: Roboto;
   line-height: 26.3px;
@@ -64,7 +64,7 @@ export const UpdateHeader = styled.h4`
   }
 `;
 
-export const UpdateSeccion = styled.div`
+export const UpdateSection = styled.div`
   margin-bottom: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
