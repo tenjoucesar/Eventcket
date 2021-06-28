@@ -46,11 +46,6 @@ export const SeccionTitle = styled.h4`
 `;
 
 export const Icon = styled.img`
-  @media ${({ theme }) => theme.minLargeDesktop} {
-    &.arrow {
-      display: none;
-    }
-  }
 `;
 
 export const UpdateHeader = styled.h4`

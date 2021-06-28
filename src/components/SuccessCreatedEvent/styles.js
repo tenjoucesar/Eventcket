@@ -1,9 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import EventInfo from 'components/EventInfo';
 import { MainButton } from 'sharedComponents/Buttons';
 
-const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
 
@@ -12,7 +10,7 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-const SuccessMessage = styled.p`
+export const SuccessMessage = styled.p`
   font-family: Avenir Next;
   font-size: 24px;
   line-height: 39px;
@@ -25,7 +23,7 @@ const SuccessMessage = styled.p`
   }
 `;
 
-const AdjustedMainButton = styled(MainButton)`
+export const AdjustedMainButton = styled(MainButton)`
   width: 100%;
   max-width: 461px;
   height: 61px;
@@ -50,19 +48,3 @@ const AdjustedMainButton = styled(MainButton)`
     }
   }
 `;
-
-const SuccessCreatedEvent = () => (
-  <>
-    <SuccessMessage>
-      √  Congratulation!! Your event is created successfully you
-      can now manage your event or share the event page directly to your attendances
-    </SuccessMessage>
-    <EventInfo />
-    <ButtonsContainer>
-      <AdjustedMainButton>Manage Event</AdjustedMainButton>
-      <AdjustedMainButton>Event Page</AdjustedMainButton>
-    </ButtonsContainer>
-  </>
-);
-
-export default SuccessCreatedEvent;

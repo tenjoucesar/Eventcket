@@ -25,7 +25,13 @@ const RowSeccion = ({ onChange, id, options = [], hide, update, title, type }) =
     <Seccion>
       <SeccionTitle>
         {title}
-        <Icon className='arrow' src={show ? ExpandLess : ExpandMore} alt='tickets' onClick={toggleShow} />
+        <Icon
+          className='arrow'
+          src={ExpandLess}
+          // src={show ? ExpandLess : ExpandMore}
+          alt='tickets'
+          onClick={toggleShow}
+        />
       </SeccionTitle>
       <SeccionContent className={show ? '' : 'hidden'}>
         <Element>

@@ -7,6 +7,9 @@ const evencketTheme = {
   lightGray: '#F0F3FA',
   darkGray: '#2B2B2B',
 
+  //borders
+  appMainBorder: '1px solid #BEA4A4',
+
   // Devices
   minTablet: '(min-width: 768px)',
   tablet: '(min-width: 768px) and (max-width: 991px)',

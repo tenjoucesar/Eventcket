@@ -1,20 +1,28 @@
 import { useContext, useState } from 'react';
+import { useHistory } from "react-router-dom";
 import { DeviceContext } from 'providers/Device';
-import { Button, ButtonContainer, Container } from './styles';
-import eventDetails from './eventDetails';
 import FormElement from 'components/FormElement';
+import eventDetails from './eventDetails';
 import organizerDetails from './organizerDetails';
-import RowSeccion from './Seccion';
+import RowSeccion from './Section';
 import ticketsDetails from './ticketsDetails';
-
+import { Button, ButtonContainer, Container } from './styles';
+const EVENT_CREATED = 'EVENT_CREATED';
 const CreateEvent = () => {
   const { device } = useContext(DeviceContext);
+  let history = useHistory();
+
   const [selected, setSelected] = useState(1);
-  const hide = id => device === 'largeDesktop' && id !== selected;
+  const hide = id => true && id !== selected;
 
   const onChange = () => {
-    //https://codesandbox.io/s/react-hook-form-wizard-form-9pg6j?file=/src/styles.css
-    setSelected(selected === 3 ? 1 : selected + 1);
+    if (selected === 3) {
+      history.push({
+        pathname: "/events/1",
+        state: EVENT_CREATED
+      });
+    }
+    setSelected(selected + 1);
   };
 
   return (
