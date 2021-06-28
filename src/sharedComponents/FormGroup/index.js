@@ -55,10 +55,4 @@ export default styled.div`
   &.div-8 {
     grid-area: div-8;
   }
-  &.div-9 {
-    grid-area: div-9;
-  }
-  &.div-10 {
-    grid-area: div-10;
-  }
 `;
