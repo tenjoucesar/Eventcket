@@ -32,14 +32,14 @@ const SubImg = styled.img`
   }
 `;
 
-const EventImages = () => (
+const EventImages = ({ images, selectedImg, setSelectedImg }) => (
   <EventsImgContainer>
-    <MainImg />
+    <MainImg src={selectedImg}/>
     <div>
-      <SubImg />
-      <SubImg />
+      <SubImg src={images[0]} onClick={() => setSelectedImg(images[0])} />
+      <SubImg src={images[1]} onClick={() => setSelectedImg(images[1])} />
     </div>
-</EventsImgContainer>
+  </EventsImgContainer>
 );
 
 export default EventImages;
