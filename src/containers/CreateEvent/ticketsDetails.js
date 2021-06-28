@@ -2,7 +2,7 @@
 export default {
   id: 3,
   title: 'Tickets Details',
-  className: 'ticket',
+  type: 'tiket',
   options: [
     { id: '31', placeholder: 'Ticket Name', label: 'Ticket Name' },
     { id: '32', placeholder: 'Quantity', label: 'Select option...', type: 'select' },

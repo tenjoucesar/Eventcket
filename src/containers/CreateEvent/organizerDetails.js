@@ -2,7 +2,7 @@
 export default {
   id: 2,
   title: ' Organizer Details',
-  className: 'organizer',
+  type: 'organizer',
   options: [
     { id: '21', placeholder: 'Name and Surname', label: 'Contact Person' },
     { id: '22', placeholder: 'Company Name', label: 'Company name(not required)' },

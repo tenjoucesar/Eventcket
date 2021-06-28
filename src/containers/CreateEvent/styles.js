@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { MainButton } from 'sharedComponents/Buttons';
 
-export const Container = styled.form`
+export const Container = styled.div`
   width: 92%;
   margin: auto;
   padding-bottom: 260px;
@@ -12,7 +12,6 @@ export const Container = styled.form`
   }
   @media ${({ theme }) => theme.minLargeDesktop} {
     margin-left: 110px;
-    max-width: 1155px;
   }
 `;
 

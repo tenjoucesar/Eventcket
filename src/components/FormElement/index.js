@@ -21,7 +21,7 @@ const FormElement = React.forwardRef((
   const Element = element[type] || Input;
   const isCheckbox = type === 'checkbox';
   return (
-    <Form className={`${className} ${isCheckbox  && 'checkbox'}`}>
+    <Form className={`${className} ${isCheckbox ? 'checkbox' :""}`}>
       {label && <Label pathname={pathname}>{label}</Label>}
       <Element
         {...(isCheckbox && { type: 'checkbox' })}
