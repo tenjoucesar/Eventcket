@@ -81,7 +81,7 @@ export const UpdateSeccion = styled.div`
 
 export const UpdateArea = styled.div`
   height: 166px;
-  border: 1px solid #bea4a4;
+  border: ${({ theme }) => theme.appMainBorder};
   margin-top: 28px;
   display: flex;
   align-items: center;

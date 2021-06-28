@@ -6,7 +6,7 @@ const createEventStyles = css`
   ::placeholder {
     color: #666666;
   }
-  border: 1px solid #bea4a4;
+  border: ${({ theme }) => theme.appMainBorder};
   height: 47px;
   padding-left: 15px;
   font-size: 14px;
