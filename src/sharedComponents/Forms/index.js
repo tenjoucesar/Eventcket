@@ -7,6 +7,10 @@ const defaultStyles = css`
   .react-datepicker__input-container input {
     color: #666666;
     border: 1px solid #bea4a4;
+    height: 47px;
+    @media ${({ theme }) => theme.minDesktop} {
+      height: 50px;
+    }
   }
   @media ${({ theme }) => theme.minDesktop} {
     grid-gap: 0px 28px;
