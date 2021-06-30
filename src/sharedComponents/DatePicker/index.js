@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import styled from 'styled-components';
+import { Controller } from 'react-hook-form';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import { InputStyles } from 'sharedComponents/Input/styles';
@@ -28,12 +29,17 @@ const DatePickerContainer = styled.div`
   }
 `;
 const DELAY_HOURS = 5;
-const DatePickerComponent = ({ delay }) => {
+const DatePickerComponent = ({ delay, register, name, control }) => {
   const [startDate, setStartDate] = useState(new Date());
   const delayedHour = delay && startDate.setHours(startDate.getHours() + DELAY_HOURS);
   return (
     <DatePickerContainer>
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} dateFormat='eeee d MMMM, yyyy' />
+      <DatePicker
+        selected={startDate}
+        onChange={date => setStartDate(date)}
+        dateFormat='eeee d MMMM, yyyy'
+        {...register(name)}
+      />
       <DatePicker
         selected={delay ? delayedHour : startDate}
         onChange={date => setStartDate(date)}
@@ -42,7 +48,19 @@ const DatePickerComponent = ({ delay }) => {
         timeIntervals={30}
         timeCaption='Time'
         dateFormat='h:mm aa'
+        // {...register(name)}
       />
+{/*
+              <Controller
+                name={name}
+                control={control}
+                render={({ onChange, value }) => (
+                    <DatePicker
+                        selected={value}
+                        onChange={onChange}
+                    />
+                )}
+              /> */}
     </DatePickerContainer>
   );
 };

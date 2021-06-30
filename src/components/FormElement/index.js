@@ -15,9 +15,9 @@ const element = {
   datePicker: DatePicker,
 };
 
-const FormElement = React.forwardRef((
-  { label, className, location: { pathname }, type, ...rest }, ref
-)=> {
+const FormElement = ({
+  label, className, name, location: { pathname }, type, register, ...rest
+}) => {
   const Element = element[type] || Input;
   const isCheckbox = type === 'checkbox';
   return (
@@ -26,10 +26,11 @@ const FormElement = React.forwardRef((
       <Element
         {...(isCheckbox && { type: 'checkbox' })}
         pathname={pathname}
-        ref={ref}
-        {...rest} />
+        register={register}
+        name={name}
+        {...rest}
+      />
     </Form>
-  );
-});
+)};
 
 export default withRouter(memo(FormElement));

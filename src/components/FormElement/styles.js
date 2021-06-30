@@ -8,7 +8,9 @@ const loginStyles = css`
   }
 `;
 
-export const Checkbox = styled.input`
+export const CheckboxStyles = styled.input`
   margin: 0;
   ${({ pathname }) => pageStyles(loginStyles)[pathname]}
 `;
+
+export const Checkbox = ({ ...props}) => <CheckboxStyles {...props}/>

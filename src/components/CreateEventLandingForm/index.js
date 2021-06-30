@@ -7,25 +7,33 @@ import {
   QuestionsContainer,
   FormButton
 } from './styles';
+import { useForm } from 'react-hook-form';
 
 const CreateEventLandingForm = () => {
+  const { register, handleSubmit, control } = useForm();
   let history = useHistory();
 
-  const submit = (e) => {
-    e.preventDefault();
-    history.push("/create-event");
+  const submit = (data) => {
+    history.push({
+      pathname: "/create-event",
+      state: data
+    });
   }
 
   return (
-    <Form onSubmit={submit}>
+    <Form onSubmit={handleSubmit(submit)}>
       <QuestionsContainer>
-        {options.map(({placeholder, id, text, type, delay}) => (
+        {options.map(({placeholder, id, text, type, delay, name, required}) => (
           <FormElement
+            name={name}
             type={type}
             placeholder={placeholder}
             label={text}
             key={id}
             delay={delay}
+            register={register}
+            control={control}
+            required={required}
           />
         ))}
       </QuestionsContainer>
@@ -35,10 +43,10 @@ const CreateEventLandingForm = () => {
 }
 
 const options = [
-  { text: 'Event Name', placeholder: 'Type Event Name', id: 1 },
-  { type: 'datePicker', text: 'Starts', className: 'row', id: 2 },
-  { type: 'datePicker', text: 'Ends', delay: true,  id: 3 },
-  { text: 'Venue Location', placeholder: 'Type Venue Location', id: 5 },
+  {id: 1, name: 'name', text: 'Event Name', placeholder: 'Type Event Name', required: true },
+  {id: 2, name: 'startTime', type: 'datePicker', text: 'Starts', required: true },
+  {id: 3, name: 'endTime', type: 'datePicker', text: 'Ends', delay: true, required: true },
+  {id: 5, name: 'location', text: 'Venue Location', placeholder: 'Type Venue Location', required: true },
 ];
 
 export default CreateEventLandingForm;
