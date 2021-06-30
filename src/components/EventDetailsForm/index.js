@@ -26,13 +26,11 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
     }
   });
   const [image, setImage] = useState(null);
-
   const onDrop = useCallback(acceptedFiles => {
     const file = acceptedFiles[0];
     //bbecause there is a way to add not accepted files
     if (file) setImage({ file, preview: URL.createObjectURL(file) });
   }, []);
-
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/jpeg, image/png, image/jpg',
     noKeyboard: true,
@@ -40,6 +38,12 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
   });
 
   const submit = (data) => {
+    //Formatting Date values as BE expect them.
+    //This could get moved to the place where we do api call
+    if (data.startTime || data.endTime) {
+      if (data.startTime) data.startTime = data.startTime.toISOString();
+      if (data.endTime) data.endTime = data.endTime.toISOString();
+    }
     displayNextForm(data);
   }
 
@@ -52,6 +56,7 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
             key={id}
             className={`div-${index + 1}`}
             register={register}
+            control={control}
           />
         ))}
       </EventForm>
