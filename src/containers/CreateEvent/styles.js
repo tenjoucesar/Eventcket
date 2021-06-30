@@ -8,10 +8,8 @@ export const Container = styled.div`
   min-height: calc(100vh - 276px);
   @media ${({ theme }) => theme.minDesktop} {
     width: 88%;
+    max-width: 1155px;
     padding-bottom: 72px;
-  }
-  @media ${({ theme }) => theme.minLargeDesktop} {
-    margin-left: 110px;
   }
 `;
 

@@ -16,10 +16,12 @@ export default styled.div`
   flex-direction: column;
   margin-bottom: 11px;
   @media ${({ theme }) => theme.minDesktop} {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
   &.row {
     ${basicCheckboxStyle}
+    margin-top:8px;
+    margin-bottom: 18px;
   }
 
   &.checkbox {

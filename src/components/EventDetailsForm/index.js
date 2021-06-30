@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form';
+import { useCallback, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import { EventForm } from 'sharedComponents/Forms';
 import Arrow from 'images/icons/arrow.png';
 import Cancel from 'images/icons/cancel.png';
@@ -9,9 +11,10 @@ import {
   UpdateArea,
   UpdateHeader,
   UpdateTitle,
-  UpdateSection
+  UpdateSection,
+  ImagePreview
 } from 'themes/createEventSharedStyles';
-import { Button, } from 'containers/CreateEvent/styles';
+import { Button } from 'containers/CreateEvent/styles';
 
 const EventDetailsForm = ({defaultValues, displayNextForm}) => {
   const { register, handleSubmit, control } = useForm({
@@ -22,11 +25,23 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
       location: defaultValues && defaultValues.location,
     }
   });
+  const [image, setImage] = useState(null);
+
+  const onDrop = useCallback(acceptedFiles => {
+    const file = acceptedFiles[0];
+    //bbecause there is a way to add not accepted files
+    if (file) setImage({ file, preview: URL.createObjectURL(file) });
+  }, []);
+
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: 'image/jpeg, image/png, image/jpg',
+    noKeyboard: true,
+    onDrop,
+  });
 
   const submit = (data) => {
     displayNextForm(data);
   }
-
 
   return (
     <form onSubmit={handleSubmit(submit)}>
@@ -42,13 +57,20 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
       </EventForm>
       <UpdateHeader>Upload an image or leave empty for featured image</UpdateHeader>
       <UpdateSection>
-        <UpdateArea>
+        <UpdateArea {...getRootProps()}>
+          <input {...getInputProps()} />
           <Icon src={Arrow} alt='arrow' />
           <UpdateTitle>Upload</UpdateTitle>
         </UpdateArea>
         <UpdateArea>
-          <Icon src={Cancel} alt='cancel' />
-          <UpdateTitle>No Image</UpdateTitle>
+          {image ? (
+            <ImagePreview src={image.preview} alt='avatar' />
+          ) : (
+            <>
+              <Icon src={Cancel} alt='cancel' />
+              <UpdateTitle>No Image</UpdateTitle>
+            </>
+          )}
         </UpdateArea>
       </UpdateSection>
       <Button>SAVE & NEXT</Button>

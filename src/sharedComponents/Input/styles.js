@@ -4,9 +4,6 @@ export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 11px;
-  @media ${({ theme }) => theme.minDesktop} {
-    margin-bottom: 18px;
-  }
 `;
 
 export const InputStyles = css`
