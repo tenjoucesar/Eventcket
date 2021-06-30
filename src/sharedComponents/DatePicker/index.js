@@ -28,39 +28,33 @@ const DatePickerContainer = styled.div`
     }
   }
 `;
-const DELAY_HOURS = 5;
-const DatePickerComponent = ({ delay, register, name, control }) => {
-  const [startDate, setStartDate] = useState(new Date());
-  const delayedHour = delay && startDate.setHours(startDate.getHours() + DELAY_HOURS);
+
+const DatePickerComponent = ({ name, control }) => {
+  const executeOnChange = (date, onChange) => onChange(date);
+
   return (
     <DatePickerContainer>
-      <DatePicker
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        dateFormat='eeee d MMMM, yyyy'
-        {...register(name)}
+      <Controller
+        control={control}
+        name={name}
+        render={({ field}) => (
+          <>
+            <DatePicker
+              onChange={(e) => executeOnChange(e, field.onChange)}
+              selected={field.value}
+            />
+            <DatePicker
+              selected={field.value}
+              onChange={date => executeOnChange(date, field.onChange)}
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={30}
+              timeCaption='Time'
+              dateFormat='h:mm aa'
+            />
+          </>
+        )}
       />
-      <DatePicker
-        selected={delay ? delayedHour : startDate}
-        onChange={date => setStartDate(date)}
-        showTimeSelect
-        showTimeSelectOnly
-        timeIntervals={30}
-        timeCaption='Time'
-        dateFormat='h:mm aa'
-        // {...register(name)}
-      />
-{/*
-              <Controller
-                name={name}
-                control={control}
-                render={({ onChange, value }) => (
-                    <DatePicker
-                        selected={value}
-                        onChange={onChange}
-                    />
-                )}
-              /> */}
     </DatePickerContainer>
   );
 };

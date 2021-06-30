@@ -1,22 +1,36 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useHistory } from "react-router-dom";
 
 import FormElement from 'components/FormElement';
-import { useHistory } from "react-router-dom";
 import {
   Form,
   QuestionsContainer,
   FormButton
 } from './styles';
-import { useForm } from 'react-hook-form';
+
+const DELAY_HOURS = 5;
+Date.prototype.addHours = function(h) {
+  this.setTime(this.getTime() + (h*60*60*1000));
+  return this;
+}
+const date = new Date();
+const delayedDate = new Date().addHours(DELAY_HOURS);
 
 const CreateEventLandingForm = () => {
-  const { register, handleSubmit, control } = useForm();
+  const { register, handleSubmit, control } = useForm({
+    defaultValues: {
+      startTime: date,
+      endTime: delayedDate,
+    }
+  });
   let history = useHistory();
 
   const submit = (data) => {
+    debugger;
     history.push({
       pathname: "/create-event",
-      state: data
+      state: data,
     });
   }
 
