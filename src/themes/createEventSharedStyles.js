@@ -45,8 +45,7 @@ export const SectionTitle = styled.h4`
   }
 `;
 
-export const Icon = styled.img`
-`;
+export const Icon = styled.img``;
 
 export const UpdateHeader = styled.h4`
   margin-top: 38px;
@@ -107,4 +106,10 @@ export const Button = styled(MainButton)`
   @media ${({ theme }) => theme.minLargeDesktop} {
     margin-top: 15px;
   }
+`;
+
+export const ImagePreview = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
