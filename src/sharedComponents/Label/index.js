@@ -32,5 +32,8 @@ export default styled.label`
   min-height: 15px;
   line-height: 17.3px;
   letter-spacing: 0.15px;
+  @media ${({ theme }) => theme.minDesktop} {
+    line-height: 24px;
+  }
   ${({ pathname }) => pageStyles(loginStyles, createEventStyles)[pathname]}
 `;
