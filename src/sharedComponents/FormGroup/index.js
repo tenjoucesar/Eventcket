@@ -21,6 +21,8 @@ export default styled.div`
   }
   &.row {
     ${basicCheckboxStyle}
+    margin-top:8px;
+    margin-bottom: 18px;
   }
 
   &.checkbox {

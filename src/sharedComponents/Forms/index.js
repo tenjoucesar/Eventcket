@@ -8,6 +8,7 @@ const defaultStyles = css`
     color: #666666;
     border: 1px solid #bea4a4;
     height: 47px;
+    width: -webkit-fill-available;
     @media ${({ theme }) => theme.minDesktop} {
       height: 50px;
     }

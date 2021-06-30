@@ -4,8 +4,8 @@ import questions from './questions';
 
 const TicketsDetailsForm = () => (
   <TiketsForm>
-    {questions.map(({ id, ...rest }, index) => (
-      <FormElement {...rest} key={id} className={`div-${index + 1}`} />
+    {questions.map(({ id, row, ...rest }, index) => (
+      <FormElement {...rest} key={id} className={`div-${index + 1} ${row ? 'row' : ''} `} />
     ))}
   </TiketsForm>
 );
