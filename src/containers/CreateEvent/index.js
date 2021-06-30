@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import FormElement from 'components/FormElement';
+
 import EventDetailsForm from 'components/EventDetailsForm';
 import OrganizerDetailsForm from 'components/OrganizerDetailsForm';
 import TicketsDetailsForm from 'components/TicketsDetailsForm';
@@ -11,34 +11,42 @@ import {
   SectionContent,
   SectionTitle,
 } from 'themes/createEventSharedStyles';
-import { Button, ButtonContainer, Container } from './styles';
+import { Button, Container } from './styles';
 
 const EVENT_CREATED = 'EVENT_CREATED';
 
-const CreateEvent = () => {
+const CreateEvent = ({ location: { state: defaultValues }}) => {
   let history = useHistory();
-  const [selected, setSelected] = useState(1);
+  const [activeForm, setActiveForm] = useState(1);
+  const [createEventData, setCreateEventData] = useState({});
 
   const getSectionTitle = () => {
-    if (selected === 1) return 'EVENT DETAILS';
-    if (selected === 2) return 'ORGANIZER DETAILS';
-    if (selected === 3) return 'TICKETS DETAILS'
+    if (activeForm === 1) return 'EVENT DETAILS';
+    if (activeForm === 2) return 'ORGANIZER DETAILS';
+    if (activeForm === 3) return 'TICKETS DETAILS'
   }
 
   const getSectionContent = () => {
-    if (selected === 1) return <EventDetailsForm />;
-    if (selected === 2) return <OrganizerDetailsForm />;
-    if (selected === 3) return <TicketsDetailsForm />
+    if (activeForm === 1) return <EventDetailsForm defaultValues={defaultValues} Button={Button} displayNextForm={displayNextForm} />;
+    if (activeForm === 2) return <OrganizerDetailsForm Button={Button} displayNextForm={displayNextForm} />;
+    if (activeForm === 3) return <TicketsDetailsForm Button={Button} displayNextForm={displayNextForm} />;
   }
 
-  const onChange = () => {
-    if (selected === 3) {
+  const displayNextForm = (dataForm) => {
+    setCreateEventData({
+      ...createEventData,
+      ...dataForm,
+    });
+
+    if (activeForm === 3) {
+      //Code will change onSucces of create event call.
       history.push({
         pathname: "/events/1",
         state: EVENT_CREATED
       });
     }
-    setSelected(selected + 1);
+
+    setActiveForm(activeForm + 1);
   };
 
   return (
@@ -56,13 +64,6 @@ const CreateEvent = () => {
           {getSectionContent()}
         </SectionContent>
       </Section>
-      {selected !== 3 && <Button onClick={onChange}>SAVE & NEXT</Button>}
-      {selected === 3 &&  (
-        <ButtonContainer>
-          <Button onClick={onChange}>SAVE EVENT</Button>
-          <FormElement type='checkbox' label='I have read the Terms and Conditions' className='row' />
-        </ButtonContainer>
-      )}
     </Container>
   );
 };

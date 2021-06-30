@@ -12,6 +12,13 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
-const TextArea = (props) => <StyledTextarea {...props} />
+const TextArea = ({
+  name, register, required, ...props
+}) => (
+  <StyledTextarea
+    {...props}
+    {...name && register(name, { required: !!required })}
+  />
+);
 
 export default TextArea;

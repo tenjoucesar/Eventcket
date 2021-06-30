@@ -1,15 +1,18 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import pageStyles from 'themes/pageStyles';
 
 const createEventStyles = css`
-  color: #666666;
-  ::placeholder {
-    color: #666666;
-  }
+  color: #000000;
   border: ${({ theme }) => theme.appMainBorder};
   height: 47px;
   padding-left: 15px;
   font-size: 14px;
+
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
   @media ${({ theme }) => theme.minDesktop} {
     height: 50px;
     font-size: 16px;
@@ -28,7 +31,7 @@ const LandingStyles = css`
   ${loginStyles}
 `;
 
-export default styled.input`
+const StyledInput = styled.input`
   border-color: ${({ theme }) => theme.white};
   border: 0.5px solid ${({ theme }) => theme.white};
   border-radius: 5px;
@@ -37,6 +40,7 @@ export default styled.input`
   background: transparent;
   font-family: Roboto;
   font-size: 14px;
+
   @media ${({ theme }) => theme.minDesktop} {
     height: 50px;
     font-size: 16px;
@@ -44,5 +48,19 @@ export default styled.input`
     letter-spacing: 0.15px;
     padding-left: 16px;
   }
+
   ${({ pathname }) => pageStyles(loginStyles, createEventStyles, LandingStyles)[pathname]}
 `;
+
+const Input = ({
+  className, pathname, name, register, placeholder, required
+}) => (
+  <StyledInput
+    {...name && register(name, { required: !!required })}
+    placeholder={placeholder}
+    className={className}
+    pathname={pathname}
+  />
+);
+
+export default Input;
