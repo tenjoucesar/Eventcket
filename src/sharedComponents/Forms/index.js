@@ -4,6 +4,7 @@ const defaultStyles = css`
   display: grid;
   align-items: center;
   grid-gap: 0px 15px;
+
   .react-datepicker__input-container input {
     color: #666666;
     border: 1px solid #bea4a4;
