@@ -4,7 +4,6 @@ const defaultStyles = css`
   display: grid;
   align-items: center;
   grid-gap: 0px 15px;
-
   .react-datepicker__input-container input {
     color: #666666;
     border: 1px solid #bea4a4;
@@ -26,19 +25,18 @@ export const EventForm = styled.div`
     'div-2'
     'div-3'
     'div-4'
-    'div-5'
     'div-6'
-    'div-7'
-    'div-8';
+    'div-5'
+    'div-7';
   grid-template-rows: repeat(8, auto);
   grid-template-columns: 1fr;
   @media ${({ theme }) => theme.minDesktop} {
     grid-template-areas:
       'div-1 div-1 div-1 div-1'
       'div-2 div-2 div-3 div-3'
-      'div-4 div-4 div-6 div-7'
+      'div-4 div-4 div-6 div-6'
       'div-5 div-5 div-5 div-5'
-      'div-8 div-8 div-8 div-8';
+      'div-7 div-7 div-7 div-7';
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(4, 1fr);
   }
@@ -46,9 +44,9 @@ export const EventForm = styled.div`
     grid-template-areas:
       'div-1 div-1 div-1 div-1 div-1'
       'div-2 div-2 div-3 div-3 .'
-      'div-4 div-4 div-4 div-6 div-7'
+      'div-4 div-4 div-4 div-6 div-6'
       'div-5 div-5 div-5 div-5 div-5'
-      'div-8 div-8 div-8 div-8 div-8';
+      'div-7 div-7 div-7 div-7 div-7';
     grid-template-columns: repeat(5, 1fr);
   }
 `;

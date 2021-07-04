@@ -6,24 +6,17 @@ import Arrow from 'images/icons/arrow.png';
 import Cancel from 'images/icons/cancel.png';
 import FormElement from 'components/FormElement';
 import questions from './questions';
-import {
-  Icon,
-  UpdateArea,
-  UpdateHeader,
-  UpdateTitle,
-  UpdateSection,
-  ImagePreview
-} from 'themes/createEventSharedStyles';
+import { Icon, UpdateArea, UpdateHeader, UpdateTitle, UpdateSection, ImagePreview } from 'themes/createEventSharedStyles';
 import { Button } from 'containers/CreateEvent/styles';
 
-const EventDetailsForm = ({defaultValues, displayNextForm}) => {
+const EventDetailsForm = ({ defaultValues, displayNextForm }) => {
   const { register, handleSubmit, control } = useForm({
     defaultValues: {
       name: defaultValues && defaultValues.name,
       startTime: defaultValues && defaultValues.startTime,
       endTime: defaultValues && defaultValues.endTime,
       location: defaultValues && defaultValues.location,
-    }
+    },
   });
   const [image, setImage] = useState(null);
   const onDrop = useCallback(acceptedFiles => {
@@ -37,7 +30,7 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
     onDrop,
   });
 
-  const submit = (data) => {
+  const submit = data => {
     //Formatting Date values as BE expect them.
     //This could get moved to the place where we do api call
     if (data.startTime || data.endTime) {
@@ -45,19 +38,13 @@ const EventDetailsForm = ({defaultValues, displayNextForm}) => {
       if (data.endTime) data.endTime = data.endTime.toISOString();
     }
     displayNextForm(data);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit(submit)}>
       <EventForm>
         {questions.map(({ id, ...rest }, index) => (
-          <FormElement
-            {...rest}
-            key={id}
-            className={`div-${index + 1}`}
-            register={register}
-            control={control}
-          />
+          <FormElement {...rest} key={id} className={`div-${index + 1}`} register={register} control={control} />
         ))}
       </EventForm>
       <UpdateHeader>Upload an image or leave empty for featured image</UpdateHeader>
