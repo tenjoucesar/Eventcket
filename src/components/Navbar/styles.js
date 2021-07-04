@@ -56,7 +56,6 @@ const MenuMobileStyles = css`
   right: 0px;
   position: fixed;
   width: 215px;
-  z-index: 999;
   display: flex;
   flex-direction: column;
 `;

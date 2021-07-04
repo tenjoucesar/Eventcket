@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import styled from 'styled-components';
 import { Controller } from 'react-hook-form';
@@ -37,12 +37,9 @@ const DatePickerComponent = ({ name, control }) => {
       <Controller
         control={control}
         name={name}
-        render={({ field}) => (
+        render={({ field }) => (
           <>
-            <DatePicker
-              onChange={(e) => executeOnChange(e, field.onChange)}
-              selected={field.value}
-            />
+            <DatePicker onChange={e => executeOnChange(e, field.onChange)} selected={field.value} />
             <DatePicker
               selected={field.value}
               onChange={date => executeOnChange(date, field.onChange)}

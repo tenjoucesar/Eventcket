@@ -7,12 +7,14 @@ import Label from 'sharedComponents/Label';
 import Select from 'sharedComponents/Select';
 import Textarea from 'sharedComponents/Textarea';
 import DatePicker from 'sharedComponents/DatePicker';
+import LocationPicker from 'sharedComponents/LocationPicker';
 
 const element = {
   select: Select,
   textarea: Textarea,
   checkbox: Checkbox,
   datePicker: DatePicker,
+  locationPicker:LocationPicker
 };
 
 const FormElement = ({

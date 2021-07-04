@@ -53,13 +53,14 @@ const StyledInput = styled.input`
 `;
 
 const Input = ({
-  className, pathname, name, register, placeholder, required
+  className, pathname, name, register, placeholder, required,...rest
 }) => (
   <StyledInput
     {...name && register(name, { required: !!required })}
     placeholder={placeholder}
     className={className}
     pathname={pathname}
+    {...rest}
   />
 );
 
