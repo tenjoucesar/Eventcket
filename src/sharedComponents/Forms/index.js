@@ -42,15 +42,6 @@ export const EventForm = styled.div`
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(4, 1fr);
   }
-  @media ${({ theme }) => theme.minLargeDesktop} {
-    grid-template-areas:
-      'div-1 div-1 div-1 div-1 div-1'
-      'div-2 div-2 div-3 div-3 .'
-      'div-4 div-4 div-4 div-6 div-7'
-      'div-5 div-5 div-5 div-5 div-5'
-      'div-8 div-8 div-8 div-8 div-8';
-    grid-template-columns: repeat(5, 1fr);
-  }
 `;
 
 export const OrganizerForm = styled.div`

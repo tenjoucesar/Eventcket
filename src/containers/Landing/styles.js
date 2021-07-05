@@ -21,8 +21,7 @@ export const Title = styled.h1`
   line-height: 69px;
   color: ${props => props.theme.white};
   max-width: 363px;
-  margin: auto;
-  margin-bottom: 46px;
+  margin: 0 0 46px;
 
   @media ${({theme}) => theme.minTablet} {
     margin-bottom: 71px;

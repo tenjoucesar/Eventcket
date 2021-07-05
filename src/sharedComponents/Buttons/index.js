@@ -8,12 +8,21 @@ export const MainButtonStyles = css`
   height: 42px;
   text-align: center;
   padding: 0 12px;
-  color: ${props => props.theme.white};
+  color: ${({theme}) => theme.white};
   font-family: Avenir Next;
   text-transform: uppercase;
   cursor: pointer;
+
   &:hover{
     opacity:0.8;
+  }
+
+  @media ${({theme}) => theme.minTablet} {
+    font-size: 18px;
+  }
+
+  @media ${({theme}) => theme.minDesktop} {
+    font-size: 20px;
   }
 `;
 
