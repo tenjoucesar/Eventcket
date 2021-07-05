@@ -1,39 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
-import styled from 'styled-components';
+
 import { Controller } from 'react-hook-form';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import { InputStyles } from 'sharedComponents/Input/styles';
+import { DatePickerContainer } from './styles';
 
-const DatePickerContainer = styled.div`
-  display: inline-flex;
 
-  .react-datepicker-wrapper {
-    width: -webkit-fill-available;
-  }
-
-  .react-datepicker-wrapper:first-child {
-    margin-right: 22px;
-  }
-
-  .react-datepicker__input-container input {
-    ${InputStyles}
-    width: 137px;
-  }
-
-  @media (min-width: 450px) {
-    .react-datepicker__input-container input {
-      width: -webkit-fill-available;
-    }
-  }
-`;
-
-const DatePickerComponent = ({ name, control }) => {
+const DatePickerComponent = ({ name, control, pathname }) => {
   const executeOnChange = (date, onChange) => onChange(date);
 
   return (
-    <DatePickerContainer>
+    <DatePickerContainer pathname={pathname}>
       <Controller
         control={control}
         name={name}

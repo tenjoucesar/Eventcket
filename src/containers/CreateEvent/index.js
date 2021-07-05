@@ -39,6 +39,10 @@ const CreateEvent = ({ location: { state: defaultValues }}) => {
     });
 
     if (activeForm === 3) {
+      console.log('form Create Event data',{
+        ...createEventData,
+        ...dataForm,
+      })
       //Code will change onSucces of create event call.
       history.push({
         pathname: "/events/1",

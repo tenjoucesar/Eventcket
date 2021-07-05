@@ -12,6 +12,7 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   padding: 11px 27px 35px;
+  width: 323px;
 
   @media ${({theme}) => theme.minTablet} {
     margin-top: 0;
@@ -30,7 +31,6 @@ export const Form = styled.form`
 
 export const QuestionsContainer = styled.div`
   padding: 13px 18px 0;
-  width: 100%;
 `;
 
 export const FormButton = styled(MainButton)`
