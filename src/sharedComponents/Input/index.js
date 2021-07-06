@@ -23,7 +23,8 @@ const createEventStyles = css`
 const loginStyles = css`
   color: ${({ theme }) => theme.white};
   ::placeholder {
-    color: ${({ theme }) => theme.white};
+    color: white;
+    opacity: 1;
   }
 `;
 
@@ -52,15 +53,8 @@ const StyledInput = styled.input`
   ${({ pathname }) => pageStyles(loginStyles, createEventStyles, LandingStyles)[pathname]}
 `;
 
-const Input = ({
-  className, pathname, name, register, placeholder, required
-}) => (
-  <StyledInput
-    {...name && register(name, { required: !!required })}
-    placeholder={placeholder}
-    className={className}
-    pathname={pathname}
-  />
+const Input = ({ className, pathname, name, register, placeholder, required }) => (
+  <StyledInput {...(name && register(name, { required: !!required }))} placeholder={placeholder} className={className} pathname={pathname} />
 );
 
 export default Input;

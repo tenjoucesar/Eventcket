@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ComputerMobIcon from 'images/icons/computer-icon.png';
 import ComputerTabIcon from 'images/icons/computer-tablet-icon.png';
 import EmailMobIcon from 'images/icons/email-icon.png';
@@ -21,7 +21,7 @@ export const BenefitTextContainer = styled.div`
 
 export const Container = styled.div`
   padding: 48px 28px 80px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 23.82%, #F1F1F1 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 23.82%, #f1f1f1 100%);
 
   h2 {
     margin-bottom: 20px;
@@ -64,14 +64,11 @@ export const InvertedBenefitContainer = styled(BenefitContainer)`
     justify-content: flex-end;
     text-align: right;
 
-
     ${BenefitTextContainer} {
       margin-right: 50px;
       margin-left: 0px;
     }
   }
-
-
 `;
 
 export const SubTitle = styled.p`
@@ -92,18 +89,17 @@ export const BenefitParagraph = styled.p`
   margin-top: 40px;
 `;
 
-export const BenefitImg = styled.img`
+export const BenefitImg = styled.span`
   align-self: center;
   margin-bottom: 100px;
-
   @media ${({ theme }) => theme.minTablet} {
     margin-bottom: 0;
   }
 `;
 
+
 export const WineImg = styled(BenefitImg)`
   content: url(${WineMobIcon});
-
   @media ${({ theme }) => theme.minTablet} {
     content: url(${WineTabIcon});
   }
@@ -120,7 +116,6 @@ export const EmailImg = styled(BenefitImg)`
 export const ComputerImg = styled(BenefitImg)`
   content: url(${ComputerMobIcon});
 
-
   @media ${({ theme }) => theme.minTablet} {
     content: url(${ComputerTabIcon});
   }
@@ -132,4 +127,5 @@ export const RocketImg = styled(BenefitImg)`
   @media ${({ theme }) => theme.minTablet} {
     content: url(${RocketTabIcon});
   }
+
 `;
