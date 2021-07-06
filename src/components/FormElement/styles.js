@@ -12,6 +12,9 @@ export const CheckboxStyles = styled.input`
   margin: 0;
   @-moz-document url-prefix() {
     align-self: flex-start;
+    @media ${({ theme }) => theme.minDesktop} {
+      align-self: center;
+    }
   }
   ${({ pathname }) => pageStyles(loginStyles)[pathname]}
 `;

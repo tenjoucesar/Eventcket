@@ -40,10 +40,7 @@ const createEventStyles = css`
     color: #666666;
     border: 1px solid #bea4a4;
     height: 47px;
-    width: -webkit-fill-available;
-    @-moz-document url-prefix() {
-      width: 100%;
-    }
+    width:100%;   
     @media ${({ theme }) => theme.minDesktop} {
       height: 50px;
     }

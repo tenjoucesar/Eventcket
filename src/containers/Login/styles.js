@@ -103,7 +103,7 @@ export const ConditionsContainer = styled.div`
 `;
 
 export const FormButton = styled(MainButton)`
-  width: 325px;
+  width:100%;
   height: 29.26px;
   font-size: 10px;
   font-family: Roboto;
