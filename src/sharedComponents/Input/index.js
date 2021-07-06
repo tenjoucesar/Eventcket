@@ -54,7 +54,12 @@ const StyledInput = styled.input`
 `;
 
 const Input = ({ className, pathname, name, register, placeholder, required }) => (
-  <StyledInput {...(name && register(name, { required: !!required }))} placeholder={placeholder} className={className} pathname={pathname} />
+  <StyledInput 
+    {...(name && register(name, { required: !!required }))} 
+    placeholder={placeholder} 
+    className={className} 
+    pathname={pathname} 
+  />
 );
 
 export default Input;
