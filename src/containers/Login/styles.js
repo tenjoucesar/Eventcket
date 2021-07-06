@@ -49,14 +49,14 @@ export const FormContainer = styled.form`
   height: 580px;
   padding: 20px;
   justify-content: center;
-
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
 
   @media ${({ theme }) => theme.minDesktop} {
     height: auto;
     padding: 28px;
     padding-bottom: 50px;
+    background: rgba(255, 255, 255, 0.5);
   }
   @media ${({ theme }) => theme.minLargeDesktop} {
     padding: 40px 117px;
