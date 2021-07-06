@@ -3,6 +3,21 @@ import { InputStyles } from 'sharedComponents/Input/styles';
 import pageStyles from 'themes/pageStyles';
 
 const landingStyles = css`
+
+  @media ${({ theme }) => theme.maxMMobile} {
+    .react-datepicker__input-container {
+      width: 80%;
+    }
+
+    .react-datepicker__input-container input {
+      width: 111%;
+    }
+
+    .react-datepicker-wrapper:first-child {
+      margin-right: 7px;
+    }
+  }
+
   @media ${({ theme }) => theme.largeMobile} {
     .react-datepicker__input-container {
       max-width: 186px;
@@ -76,11 +91,22 @@ export const DatePickerContainer = styled.div`
   .react-datepicker__input-container input {
     ${InputStyles}
     width: 137px;
+
+    :focus {
+      outline: none;
+      border: 1.46px solid #FFC843;
+    }
   }
 
   @media ${({ theme }) => theme.minDesktop} {
     .react-datepicker-wrapper:first-child {
       margin-right: 28px;
+    }
+
+    .react-datepicker__input-container input {
+      :focus {
+        border: 2px solid #FFC843;
+      }
     }
   }
 

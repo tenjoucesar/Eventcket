@@ -11,11 +11,13 @@ const evencketTheme = {
   appMainBorder: '1px solid #BEA4A4',
 
   // Devices
+  mMobile: '(min-width: 431px)',
   largeMobile: '(min-width: 450px)',
   minTablet: '(min-width: 768px)',
   tablet: '(min-width: 768px) and (max-width: 991px)',
   minDesktop: '(min-width: 992px)',
   minLDesktop: '(min-width: 1200px)',
+  maxMMobile: '(max-width: 431px)',
   minLargeDesktop: '(min-width: 1440px)',
   maxLargeDesktop: '(max-width: 1439px)',
 }
