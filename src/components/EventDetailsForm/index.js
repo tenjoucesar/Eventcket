@@ -44,7 +44,13 @@ const EventDetailsForm = ({ defaultValues, displayNextForm }) => {
     <form onSubmit={handleSubmit(submit)}>
       <EventForm>
         {questions.map(({ id, ...rest }, index) => (
-          <FormElement {...rest} key={id} className={`div-${index + 1}`} register={register} control={control} />
+          <FormElement 
+            {...rest} 
+            key={id} 
+            className={`div-${index + 1}`} 
+            register={register} 
+            control={control} 
+            />
         ))}
       </EventForm>
       <UpdateHeader>Upload an image or leave empty for featured image</UpdateHeader>

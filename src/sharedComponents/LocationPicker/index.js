@@ -39,14 +39,22 @@ const LocationPicker = ({ placeholder, pathname }) => {
     <>
       <Input pathname={pathname} readOnly placeholder={selectedLocation ? 'Selected' : placeholder} onClick={toggleModal} style={{ cursor: 'pointer' }} />
       {modal && (
-        <Modal isOpen={modal} onRequestClose={toggleModal} style={customStyles} contentLabel='Example Modal' ariaHideApp={false}>
+        <Modal 
+          isOpen={modal} 
+          onRequestClose={toggleModal} 
+          style={customStyles} 
+          contentLabel='Example Modal' 
+          ariaHideApp={false}>
           <MapContainer zoom={13} scrollWheelZoom={false}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             />
             <ChangeMapView />
-            <AddMarker position={selectedLocation} setPosition={onSelectPosition} />
+            <AddMarker 
+              position={selectedLocation} 
+              setPosition={onSelectPosition} 
+            />
           </MapContainer>
         </Modal>
       )}

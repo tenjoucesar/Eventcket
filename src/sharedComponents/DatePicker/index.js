@@ -39,7 +39,10 @@ const DatePickerComponent = ({ name, control }) => {
         name={name}
         render={({ field }) => (
           <>
-            <DatePicker onChange={e => executeOnChange(e, field.onChange)} selected={field.value} />
+            <DatePicker 
+              onChange={e => executeOnChange(e, field.onChange)} 
+              selected={field.value} 
+            />
             <DatePicker
               selected={field.value}
               onChange={date => executeOnChange(date, field.onChange)}
