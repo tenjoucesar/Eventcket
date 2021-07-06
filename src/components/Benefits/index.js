@@ -15,6 +15,7 @@ import {
   RocketImg
 } from './styles';
 
+
 const Benefits = () => (
   <Container>
     <H2>Our Benefits</H2>

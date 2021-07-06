@@ -5,15 +5,6 @@ const defaultStyles = css`
   align-items: center;
   grid-gap: 0px 15px;
 
-  .react-datepicker__input-container input {
-    color: #666666;
-    border: 1px solid #bea4a4;
-    height: 47px;
-    width: -webkit-fill-available;
-    @media ${({ theme }) => theme.minDesktop} {
-      height: 50px;
-    }
-  }
   @media ${({ theme }) => theme.minDesktop} {
     grid-gap: 0px 28px;
   }

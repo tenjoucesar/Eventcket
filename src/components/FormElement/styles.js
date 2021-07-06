@@ -10,7 +10,10 @@ const loginStyles = css`
 
 export const CheckboxStyles = styled.input`
   margin: 0;
+  @-moz-document url-prefix() {
+    align-self: flex-start;
+  }
   ${({ pathname }) => pageStyles(loginStyles)[pathname]}
 `;
 
-export const Checkbox = ({ ...props}) => <CheckboxStyles {...props}/>
+export const Checkbox = ({ ...props }) => <CheckboxStyles {...props} />;

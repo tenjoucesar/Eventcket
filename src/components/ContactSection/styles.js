@@ -41,7 +41,7 @@ export const Container = styled.section`
 
   input {
     ${InputStyles}
-    margin: 8px auto 21px 0;
+    margin: 8px 0 21px 0;
     width: -webkit-fill-available;
   }
 
