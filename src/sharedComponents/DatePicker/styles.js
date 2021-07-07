@@ -36,6 +36,7 @@ const createEventStyles = css`
 
   .react-datepicker__input-container {
     display: flex;
+    width: 100%;
   }
 
   .react-datepicker-wrapper {
@@ -45,19 +46,20 @@ const createEventStyles = css`
     color: #666666;
     border: 1px solid #bea4a4;
     height: 47px;
-    width: -webkit-fill-available;
-
-    @-moz-document url-prefix() {
-      width: 100%;
-    }
+    width: 100%;
 
     // Built as a fix for Safari
-    @media(min-width: 992px) and (max-width: 1110px) {
+    @media (min-width: 992px) and (max-width: 1110px) {
       width: 153px !important;
     }
 
     @media ${({ theme }) => theme.minDesktop} {
       height: 50px;
+    }
+  }
+  @media ${({ theme }) => theme.maxMMobile} {
+    .react-datepicker-wrapper:first-child {
+      margin-right: 18px;
     }
   }
 `;
@@ -89,10 +91,9 @@ export const DatePickerContainer = styled.div`
 
     :focus {
       outline: none;
-      border: 1.46px solid #FFC843;
+      border: 1.46px solid #ffc843;
     }
   }
-
 
   @media ${({ theme }) => theme.maxMMobile} {
     .react-datepicker__input-container {
@@ -120,7 +121,7 @@ export const DatePickerContainer = styled.div`
 
     .react-datepicker__input-container input {
       :focus {
-        border: 2px solid #FFC843;
+        border: 2px solid #ffc843;
       }
     }
 
