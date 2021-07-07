@@ -13,7 +13,7 @@ export const Form = styled.form`
   align-items: center;
   padding: 11px 27px 35px;
 
-  @media ${({theme}) => theme.mMobile} {
+  @media ${({theme}) => theme.minMMobile} {
     width: 323px;
   }
 

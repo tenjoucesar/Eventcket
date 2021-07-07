@@ -36,6 +36,11 @@ export const AdjustedMainButton = styled(MainButton)`
     margin-right: 30px;
   }
 
+  @media ${({ theme }) => theme.maxMMobile} {
+    font-size: 16px;
+    padding: 0;
+  }
+
   @media ${({ theme }) => theme.minTablet} {
     &:first-child {
       margin-right: 50px;

@@ -9,6 +9,7 @@ import TicketsForm from './TicketsForm';
 
 const EventPage = ({ images, selectedImg, setSelectedImg }) => {
   const { device } = useContext(DeviceContext);
+
   return (
     <RowContainer>
       {device !== 'mobile' &&

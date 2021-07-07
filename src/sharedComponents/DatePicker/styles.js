@@ -3,21 +3,6 @@ import { InputStyles } from 'sharedComponents/Input/styles';
 import pageStyles from 'themes/pageStyles';
 
 const landingStyles = css`
-
-  @media ${({ theme }) => theme.maxMMobile} {
-    .react-datepicker__input-container {
-      width: 80%;
-    }
-
-    .react-datepicker__input-container input {
-      width: 111%;
-    }
-
-    .react-datepicker-wrapper:first-child {
-      margin-right: 7px;
-    }
-  }
-
   @media ${({ theme }) => theme.largeMobile} {
     .react-datepicker__input-container {
       max-width: 186px;
@@ -42,6 +27,11 @@ const landingStyles = css`
 const createEventStyles = css`
   @-moz-document url-prefix() {
     display: flex;
+  }
+
+  //Fixes trinagle at time picker
+  .react-datepicker--time-only .react-datepicker__triangle {
+    left: -36% !important;
   }
 
   .react-datepicker__input-container {
@@ -88,6 +78,11 @@ export const DatePickerContainer = styled.div`
     margin-right: 22px;
   }
 
+  //Fixes trinagle at time picker
+  .react-datepicker--time-only .react-datepicker__triangle {
+    left: -27% !important;
+  }
+
   .react-datepicker__input-container input {
     ${InputStyles}
     width: 137px;
@@ -95,6 +90,26 @@ export const DatePickerContainer = styled.div`
     :focus {
       outline: none;
       border: 1.46px solid #FFC843;
+    }
+  }
+
+
+  @media ${({ theme }) => theme.maxMMobile} {
+    .react-datepicker__input-container {
+      width: 80%;
+    }
+
+    .react-datepicker__input-container input {
+      width: 111%;
+    }
+
+    .react-datepicker-wrapper:first-child {
+      margin-right: 7px;
+    }
+
+    //Fixes trinagle at time picker
+    .react-datepicker--time-only .react-datepicker__triangle {
+      left: -9% !important;
     }
   }
 
@@ -107,6 +122,11 @@ export const DatePickerContainer = styled.div`
       :focus {
         border: 2px solid #FFC843;
       }
+    }
+
+    //Fixes trinagle at time picker
+    .react-datepicker--time-only .react-datepicker__triangle {
+      left: -47% !important;
     }
   }
 
