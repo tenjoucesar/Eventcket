@@ -12,7 +12,10 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   padding: 11px 27px 35px;
-  width: 323px;
+
+  @media ${({theme}) => theme.minMMobile} {
+    width: 323px;
+  }
 
   @media ${({theme}) => theme.minTablet} {
     margin-top: 0;
@@ -31,13 +34,19 @@ export const Form = styled.form`
 
 export const QuestionsContainer = styled.div`
   padding: 13px 18px 0;
+
+  @media ${({theme}) => theme.maxMMobile} {
+    width: 100%;
+  }
 `;
 
 export const FormButton = styled(MainButton)`
   background: linear-gradient(0deg, #FFC843, #FFC843);
   border-radius: 72.897px;
-  width: 260px;
+  max-width: 260px;
+  width: 100%;
   padding: 0;
+  margin-top: 7px;
 
   a {
     font-weight: 500;

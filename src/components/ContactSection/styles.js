@@ -108,10 +108,14 @@ export const AdjustedMainButton = styled(MainButton)`
   font-weight: bold;
   font-size: 18px;
   line-height: 13px;
-  min-width: 373px;
   text-transform: none;
   height: 48px;
   font-family: Avenir Next Bold;
+  width: 100%;
+
+  @media ${({ theme }) => theme.minTablet} {
+    width: 373px;
+  }
 `;
 
 export const TextContainer = styled.div`

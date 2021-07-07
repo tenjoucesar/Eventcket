@@ -42,23 +42,33 @@ const StyledInput = styled.input`
   font-family: Roboto;
   font-size: 14px;
 
+  :focus {
+    outline: none;
+    border: 1.46px solid #FFC843;
+  }
+
+
   @media ${({ theme }) => theme.minDesktop} {
     height: 50px;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.15px;
     padding-left: 16px;
+
+    :focus {
+      border: 2px solid #FFC843;
+    }
   }
 
   ${({ pathname }) => pageStyles(loginStyles, createEventStyles, LandingStyles)[pathname]}
 `;
 
 const Input = ({ className, pathname, name, register, placeholder, required }) => (
-  <StyledInput 
-    {...(name && register(name, { required: !!required }))} 
-    placeholder={placeholder} 
-    className={className} 
-    pathname={pathname} 
+  <StyledInput
+    {...(name && register(name, { required: !!required }))}
+    placeholder={placeholder}
+    className={className}
+    pathname={pathname}
   />
 );
 

@@ -44,11 +44,16 @@ export const Main = styled.main`
   background-position-y: center;
   background-size: cover;
   padding: 99px 27px 90px;
+  display: flex;
+  flex-direction: column;
+
+  @media ${({theme}) => theme.maxTablet} {
+    align-items: center;
+  }
 
   @media ${({theme}) => theme.minTablet} {
-    padding: 75px 41px;
-    display: flex;
     flex-direction: row;
+    padding: 75px 41px;
     justify-content: center;
   }
 

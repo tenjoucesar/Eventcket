@@ -17,7 +17,7 @@ Date.prototype.addHours = function(h) {
 const date = new Date();
 const delayedDate = new Date().addHours(DELAY_HOURS);
 
-const CreateEventLandingForm = () => {
+function CreateEventLandingForm() {
   const { register, handleSubmit, control } = useForm({
     defaultValues: {
       startTime: date,

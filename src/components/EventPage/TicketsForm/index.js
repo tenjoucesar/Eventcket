@@ -9,6 +9,12 @@ const Price = styled.strong`
   ${EventInfoStrongTextStyles}
 `;
 
+const AdjustedRowContainer = styled(RowContainer)`
+  @media ${({theme}) => theme.maxMMobile} {
+    flex-direction: column;
+  }
+`;
+
 const DropDownLabel = styled.label`
   font-family: Roboto;
   font-style: normal;
@@ -28,18 +34,26 @@ const AdjustedMainButton = styled(MainButton)`
   font-family: Avenir Next Bold;
   text-transform: capitalize;
   margin-top: 29px;
+
+  @media ${({theme}) => theme.maxMMobile} {
+    max-width: 280px;
+  }
 `;
 
 const AdjustedColContainer = styled(ColContainer)`
   &:first-child {
     margin-right: 19px;
   }
+
+  @media ${({theme}) => theme.maxMMobile} {
+    margin-top: 15px;
+  }
 `;
 
 const TicketsForm = () => (
   <div>
     <EventInfoText>Starting at<Price> 25$</Price></EventInfoText>
-    <RowContainer>
+    <AdjustedRowContainer>
       <AdjustedColContainer>
         <DropDownLabel>Ticket type</DropDownLabel>
         <DropDownForm
@@ -54,7 +68,7 @@ const TicketsForm = () => (
           placeholder='Select option...'
         />
       </AdjustedColContainer>
-    </RowContainer>
+    </AdjustedRowContainer>
     <AdjustedMainButton>Buy Tickets</AdjustedMainButton>
   </div>
 );

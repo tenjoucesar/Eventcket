@@ -29,6 +29,11 @@ const createEventStyles = css`
     display: flex;
   }
 
+  //Fixes trinagle at time picker
+  .react-datepicker--time-only .react-datepicker__triangle {
+    left: -36% !important;
+  }
+
   .react-datepicker__input-container {
     display: flex;
   }
@@ -73,14 +78,55 @@ export const DatePickerContainer = styled.div`
     margin-right: 22px;
   }
 
+  //Fixes trinagle at time picker
+  .react-datepicker--time-only .react-datepicker__triangle {
+    left: -27% !important;
+  }
+
   .react-datepicker__input-container input {
     ${InputStyles}
     width: 137px;
+
+    :focus {
+      outline: none;
+      border: 1.46px solid #FFC843;
+    }
+  }
+
+
+  @media ${({ theme }) => theme.maxMMobile} {
+    .react-datepicker__input-container {
+      width: 80%;
+    }
+
+    .react-datepicker__input-container input {
+      width: 111%;
+    }
+
+    .react-datepicker-wrapper:first-child {
+      margin-right: 7px;
+    }
+
+    //Fixes trinagle at time picker
+    .react-datepicker--time-only .react-datepicker__triangle {
+      left: -9% !important;
+    }
   }
 
   @media ${({ theme }) => theme.minDesktop} {
     .react-datepicker-wrapper:first-child {
       margin-right: 28px;
+    }
+
+    .react-datepicker__input-container input {
+      :focus {
+        border: 2px solid #FFC843;
+      }
+    }
+
+    //Fixes trinagle at time picker
+    .react-datepicker--time-only .react-datepicker__triangle {
+      left: -47% !important;
     }
   }
 

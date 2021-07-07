@@ -12,17 +12,10 @@ export const MainButtonStyles = css`
   font-family: Avenir Next;
   text-transform: uppercase;
   cursor: pointer;
+  font-size: 1em;
 
   &:hover{
     opacity:0.8;
-  }
-
-  @media ${({theme}) => theme.minTablet} {
-    font-size: 18px;
-  }
-
-  @media ${({theme}) => theme.minDesktop} {
-    font-size: 20px;
   }
 `;
 

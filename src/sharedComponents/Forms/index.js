@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components';
 
 const defaultStyles = css`
-  display: grid;
-  align-items: center;
-  grid-gap: 0px 15px;
+  @media ${({ theme }) => theme.minMMobile} {
+    display: grid;
+    align-items: center;
+    grid-gap: 0px 15px;
+  }
 
   @media ${({ theme }) => theme.minDesktop} {
     grid-gap: 0px 28px;

@@ -108,6 +108,11 @@ export const FormButton = styled(MainButton)`
   font-size: 10px;
   font-family: Roboto;
   margin-bottom: 18px;
+
+  @media ${({ theme }) => theme.maxMMobile} {
+    width: 275px;
+  }
+
   @media ${({ theme }) => theme.minDesktop} {
     width: 100%;
     height: 40px;
